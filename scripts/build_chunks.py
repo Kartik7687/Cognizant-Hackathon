@@ -20,6 +20,13 @@ SET_IDS = {
     "amlodipine": "b6f298ba-2d7e-4a3c-9edb-8b60aba716d6",
     "atorvastatin": "595ab888-6b55-4642-a32f-e8521821ed81",
 }
+BRAND_ALIASES = {
+    "warfarin": ["Coumadin", "Jantoven"],
+    "metformin": ["Glucophage", "Fortamet", "Glumetza"],
+    "lisinopril": ["Zestril", "Prinivil"],
+    "amlodipine": ["Norvasc"],
+    "atorvastatin": ["Lipitor"],
+}
 
 TARGET_SECTIONS = {
     "INDICATIONS AND USAGE": "Indications and Usage",
@@ -114,7 +121,7 @@ def parse_label(xml_path):
                 drug_name=xml_path.stem.lower(),
                 section=section_name,
                 text=full_text,
-                aliases=[xml_path.stem.lower()],
+                aliases=BRAND_ALIASES.get(xml_path.stem.lower(), []),
                 set_id=set_id,
                 version=version,
                 effective_date=effective_date,
