@@ -1,0 +1,9 @@
+numpy>=1.26
+pytest>=8.0
+# Real embeddings and reranker (not needed for the offline "hash" embedder or the tests):
+sentence-transformers>=3.0
+# Add as the other modules land:
+# lxml>=5.0            (Shruti: SPL XML parsing)
+# pdfplumber>=0.11     (Shruti: PDF fallback)
+# streamlit>=1.38      (Akansha: UI)
+# requests>=2.32       (Ankita: Ollama client)
