@@ -5,6 +5,7 @@ from pathlib import Path
 from urllib.parse import quote
 import time
 import requests
+import xml.etree.ElementTree as ET
 
 BASE_URL = "https://dailymed.nlm.nih.gov/dailymed/services/v2"
 SEARCH_URL = "https://dailymed.nlm.nih.gov/dailymed/services/v1"
@@ -16,6 +17,8 @@ EXISTING_DRUGS = {
     "lisinopril": "c57e8bc8-ff50-431e-9c1a-384503584d02",
     "amlodipine": "b6f298ba-2d7e-4a3c-9edb-8b60aba716d6",
     "atorvastatin": "595ab888-6b55-4642-a32f-e8521821ed81",
+    "levothyroxine": "8bc641d8-0185-49b2-9c1f-d886bf5ce098",
+    "lantus": "d5e07a0c-7e14-4756-9152-9fea485d654a",
 }
 
 # 40 unique generic drug names in total.
@@ -63,55 +66,138 @@ DRUG_NAMES = [
 ]
 
 RAW_DIR = Path(__file__).resolve().parents[1] / "data" / "raw"
+def local_name(tag):
+    """Return an XML tag without its namespace."""
+    return tag.split("}")[-1].lower()
 
 
 def find_set_id(drug_name, session):
-    """Search DailyMed for a label and return its SPL set ID."""
-    url = (
-        f"{SEARCH_URL}/drugname/"
-        f"{quote(drug_name, safe='')}/spls.json"
+    """Find the best human prescription label from multiple candidates."""
+    search_name = (
+        "insulin glargine" if drug_name.lower() == "lantus"
+        else drug_name
     )
 
+    url = f"{BASE_URL}/spls.json"
+
     try:
-        response = session.get(url, timeout=30)
+        response = session.get(
+    url,
+    params={
+        "drug_name": search_name,
+        "page": 1,
+        "pagesize": 20,
+    },
+    timeout=30,
+)
         response.raise_for_status()
         payload = response.json()
 
-        # DailyMed responses may represent results as objects or
-        # as COLUMNS/DATA arrays, so handle both forms.
         records = payload.get("data", [])
 
-        if records and isinstance(records[0], dict):
-            for record in records:
-                set_id = (
-                    record.get("spl_set_id")
-                    or record.get("setid")
-                    or record.get("set_id")
-                )
-                if set_id:
-                    return str(set_id)
+        # Support DailyMed responses represented as COLUMNS/DATA.
+        records = payload.get("data", [])
 
-        columns = payload.get("COLUMNS", [])
-        rows = payload.get("DATA", [])
-        if columns and rows:
-            normalized_columns = [
-                str(column).lower() for column in columns
-            ]
-            for row in rows:
-                record = dict(zip(normalized_columns, row))
-                set_id = (
-                    record.get("spl_set_id")
-                    or record.get("setid")
-                    or record.get("set_id")
-                )
-                if set_id:
-                    return str(set_id)
+# Handle DailyMed's COLUMNS/DATA response format.
+        if not records and payload.get("COLUMNS") and payload.get("DATA"):
+            
+            records = [
+            dict(zip(payload["COLUMNS"], row))
+            for row in payload["DATA"]
+            ]  
 
-        print(f"  No label found in search results for {drug_name}.")
+# Normalize the response into a list of dictionaries.
+        if isinstance(records, dict):
+            records = [records]
+
+        candidates = []
+        seen_ids = set()
+
+        for record in records:
+            if not isinstance(record, dict):
+                continue
+
+            normalized = {
+                str(key).lower(): value
+                for key, value in record.items()
+            }
+
+            set_id = (
+                normalized.get("spl_set_id")
+                or normalized.get("setid")
+                or normalized.get("set_id")
+            )
+
+            if not set_id or str(set_id) in seen_ids:
+                continue
+
+            seen_ids.add(str(set_id))
+            candidates.append(str(set_id))
+
+        if not candidates:
+            print(f"  No candidates found for {search_name}.")
+            return None
+
+        # Inspect several candidate XML labels and score their sections.
+        required_codes = {
+            "34067-9",  # Indications
+            "34068-7",  # Dosage
+            "34070-3",  # Contraindications
+            "43685-7",  # Warnings and precautions
+            "34084-4",  # Adverse reactions
+            "34073-7",  # Drug interactions
+        }
+
+        best_id = None
+        best_score = -1
+
+        for candidate_id in candidates[:10]:
+            try:
+                xml_response = session.get(
+                    f"{BASE_URL}/spls/{candidate_id}.xml",
+                    timeout=45,
+                )
+                xml_response.raise_for_status()
+                root = ET.fromstring(xml_response.content)
+
+                found_codes = set()
+                for element in root.iter():
+                    if local_name(element.tag) == "section":
+                        for child in element:
+                            if local_name(child.tag) == "code":
+                                code = child.attrib.get("code", "").strip()
+                                if code in required_codes:
+                                    found_codes.add(code)
+
+                score = len(found_codes)
+                print(
+                    f"  Candidate {candidate_id}: "
+                    f"{score}/6 required section types"
+                )
+
+                if score > best_score:
+                    best_score = score
+                    best_id = candidate_id
+
+                if score == len(required_codes):
+                    break
+
+            except (requests.RequestException, ET.ParseError) as error:
+                print(f"  Could not inspect candidate {candidate_id}: {error}")
+
+            time.sleep(0.2)
+
+        if best_id is not None and best_score > 0:
+            print(
+                f"  Selected label {best_id} "
+                f"with {best_score}/6 required section types."
+            )
+            return best_id
+        print(f"  No usable label found for {search_name}.")
         return None
 
     except (requests.RequestException, ValueError) as error:
-        print(f"  Search failed for {drug_name}: {error}")
+        print(f"  Search failed for {search_name}: {error}")
         return None
 
 
