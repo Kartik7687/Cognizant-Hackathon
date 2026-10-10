@@ -18,7 +18,7 @@ EXISTING_DRUGS = {
     "amlodipine": "b6f298ba-2d7e-4a3c-9edb-8b60aba716d6",
     "atorvastatin": "595ab888-6b55-4642-a32f-e8521821ed81",
     "levothyroxine": "8bc641d8-0185-49b2-9c1f-d886bf5ce098",
-    "lantus": "5328761e-59d3-ca7a-e063-6394a90ae810",
+    "lantus": "d5e07a0c-7e14-4756-9152-9fea485d654a",
 }
 
 # 40 unique generic drug names in total.
