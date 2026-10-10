@@ -102,7 +102,13 @@ def validate_chunks(chunks: list[Chunk]) -> tuple[list[str], list[str]]:
         if c.page != "N/A" and not str(c.page).isdigit():
             errors.append(f"{tag}: page must be 'N/A' or a page number (got {c.page!r})")
         key = c.text.strip().lower()
-        if key and key in texts and texts[key] != c.chunk_id:
-            warns.append(f"{tag}: identical text to {texts[key]} (duplicate labels? keep one label per drug)")
-        texts.setdefault(key, c.chunk_id)
+        duplicate_key = (c.drug_name.strip().lower(), key)
+        if key and duplicate_key in texts and texts[duplicate_key] != c.chunk_id:
+            previous_chunk_id = texts[duplicate_key]
+            warns.append(
+                f"{tag}: duplicate text within drug "
+                f"(same as {previous_chunk_id})"
+            )
+        if key:
+            texts.setdefault(duplicate_key, c.chunk_id)
     return errors, warns
