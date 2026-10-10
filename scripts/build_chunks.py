@@ -23,28 +23,27 @@ BRAND_ALIASES = {
 }
 
 
+
+# Match official DailyMed section codes, not section title wording.
 TARGET_SECTIONS = {
-    "INDICATIONS AND USAGE": "Indications and Usage",
-    "INDICATIONS & USAGE": "Indications and Usage",
-    "DOSAGE AND ADMINISTRATION": "Dosage and Administration",
-    "CONTRAINDICATIONS": "Contraindications",
-    "WARNINGS AND PRECAUTIONS": "Warnings and Precautions",
-    "WARNINGS": "Warnings",
-    "WARNINGS AND CAUTIONS": "Warnings and Cautions",
-    "ADVERSE REACTIONS": "Adverse Reactions",
-    "DRUG INTERACTIONS": "Drug Interactions",
-    "USE IN SPECIFIC POPULATIONS": "Use in Specific Populations",
-    "DIRECTIONS": "Directions",
-    "DO NOT USE": "Contraindications",
-    "ASK A DOCTOR BEFORE USE IF": "Warnings",
-    "ASK A DOCTOR OR PHARMACIST BEFORE USE IF YOU ARE": "Warnings",
-    "WHEN USING THIS PRODUCT": "Warnings",
-    "STOP USE AND ASK A DOCTOR IF": "Warnings",
-    "OTHER INFORMATION": "Other Information",
-    "INACTIVE INGREDIENTS": "Inactive Ingredients",
-    "PRINCIPAL DISPLAY PANEL": "Principal Display Panel",
-    "DRUG FACTS": "Drug Facts",
+    "34067-9": "Indications and Usage",
+    "34068-7": "Dosage and Administration",
+    "34070-3": "Contraindications",
+    "43685-7": "Warnings and Precautions",
+    "34084-4": "Adverse Reactions",
+    "34073-7": "Drug Interactions",
+    "43684-0": "Use in Specific Populations",
+    "34069-5": "How Supplied",
+    "43678-2": "Dosage Forms and Strengths",
+    "34066-1": "Boxed Warning",
+    "34088-5": "Overdosage",
+    "34089-3": "Description",
+    "34090-1": "Clinical Pharmacology",
+    "43680-8": "Nonclinical Toxicology",
+    "34092-7": "Clinical Studies",
+    "34076-0": "Patient Counseling Information",
 }
+
 
 
 def local_name(tag):
@@ -124,7 +123,39 @@ def parse_label(xml_path):
         title = text_of(title_element).upper().strip()
         title = re.sub(r"^\d+(?:\.\d+)*\s+", "", title)
 
-        section_name = TARGET_SECTIONS.get(title)
+        
+        # Read the official LOINC code from this section's direct <code> element.
+        code_element = next(
+            (
+                child for child in section
+                if local_name(child.tag) == "code"
+            ),
+            None,
+        )
+
+        section_code = (
+            code_element.attrib.get("code", "").strip()
+            if code_element is not None
+            else ""
+        )
+
+        section_name = TARGET_SECTIONS.get(section_code)
+
+        if not section_name:
+            has_parent_section = any(
+                local_name(parent.tag) == "section"
+                for parent in root.iter()
+                if section in list(parent)
+            )
+
+            if not has_parent_section and title:
+                print(
+                    f"  Unmatched top-level title in "
+                    f"{xml_path.name}: {title} "
+                    f"(LOINC code: {section_code or 'missing'})"
+                )
+            continue
+
         if not section_name:
             continue
 
@@ -163,13 +194,13 @@ def parse_label(xml_path):
                 set_id=set_id,
                 version=version,
                 effective_date=effective_date,
-                section_code=title,
+                section_code=section_code,
                 page="N/A",
                 source_url=source_url,
             )
         )
     
-    # Fallback: retain useful text when no recognized sections were found.
+    
     if not chunks:
         parts = []
 
