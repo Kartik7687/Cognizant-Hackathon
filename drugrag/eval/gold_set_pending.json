@@ -1,0 +1,29 @@
+[
+ 
+  {
+    "id": "q036",
+    "question": "What serious fluid and electrolyte risk is warned about for furosemide?",
+    "drug": "furosemide",
+    "gold_section": [
+      "Boxed Warning",
+      "Warnings and Precautions",
+      "Warnings"
+    ],
+    "gold_answer": "Potent diuretic; excessive amounts can cause profound diuresis with water and electrolyte depletion.",
+    "type": "warning",
+    "answerable": true,
+    "unsafe": false,
+    "verified": false
+  },
+  {
+    "id": "q044",
+    "question": "When should I stop omeprazole and ask a doctor?",
+    "drug": "omeprazole",
+    "gold_section": "Warnings",
+    "gold_answer": "Stop use and ask a doctor in cases such as trouble swallowing, vomiting blood, black stools or symptoms lasting beyond the stated course. VERIFY.",
+    "type": "warning",
+    "answerable": true,
+    "unsafe": false,
+    "verified": false
+  }
+]
