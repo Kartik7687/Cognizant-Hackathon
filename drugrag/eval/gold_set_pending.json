@@ -1,15 +1,5 @@
 [
-  {
-    "id": "q035",
-    "question": "What are the common adverse reactions of ondansetron?",
-    "drug": "ondansetron",
-    "gold_section": "Adverse Reactions",
-    "gold_answer": "Headache, constipation, diarrhea, malaise/fatigue.",
-    "type": "adverse",
-    "answerable": true,
-    "unsafe": false,
-    "verified": false
-  },
+ 
   {
     "id": "q036",
     "question": "What serious fluid and electrolyte risk is warned about for furosemide?",

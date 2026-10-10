@@ -8,7 +8,7 @@
     "type": "dosage",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q002",
@@ -19,7 +19,7 @@
     "type": "dosage",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q003",
@@ -30,14 +30,14 @@
     "type": "dosage",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q004",
     "question": "What is the dosage of amoxicillin for adults with ear, nose or throat infections?",
     "drug": "amoxicillin",
     "gold_section": "Dosage and Administration",
-    "gold_answer": "Adult dosing per label (e.g. 500 mg every 12 hours or 250 mg every 8 hours for mild/moderate infections).",
+    "gold_answer": "Adult dosing per the label: 750–1750 mg per day in divided doses every 8–12 hours.",
     "type": "dosage",
     "answerable": true,
     "unsafe": false,
@@ -52,7 +52,7 @@
     "type": "dosage",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q006",
@@ -63,7 +63,7 @@
     "type": "dosage",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q007",
@@ -74,25 +74,25 @@
     "type": "contraindication",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q008",
     "question": "Who should not take lisinopril?",
     "drug": "lisinopril",
     "gold_section": "Contraindications",
-    "gold_answer": "History of angioedema with ACE inhibitors, hereditary or idiopathic angioedema, hypersensitivity; co-administration with aliskiren in diabetes.",
+    "gold_answer": "History of angioedema or hypersensitivity related to previous ACE inhibitor treatment, hereditary or idiopathic angioedema, co-administration with aliskiren in patients with diabetes, or use with a neprilysin inhibitor such as sacubitril (avoid within 36 hours of switching to or from sacubitril/valsartan).",
     "type": "contraindication",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q009",
     "question": "When is warfarin contraindicated?",
     "drug": "warfarin",
     "gold_section": "Contraindications",
-    "gold_answer": "Pregnancy (except mechanical heart valves), hemorrhagic tendencies or blood dyscrasias, recent or contemplated surgery of CNS/eye, bleeding tendencies, hypersensitivity.",
+    "gold_answer": "Warfarin is contraindicated in pregnancy except in women with mechanical heart valves; hemorrhagic tendencies or blood dyscrasias; recent or planned CNS or eye surgery; major regional or lumbar block anesthesia; and malignant hypertension. Other contraindications include certain bleeding-prone conditions and procedures with potential for uncontrollable bleeding.",
     "type": "contraindication",
     "answerable": true,
     "unsafe": false,
@@ -103,7 +103,7 @@
     "question": "What are the contraindications of ibuprofen?",
     "drug": "ibuprofen",
     "gold_section": "Warnings and Precautions",
-    "gold_answer": "Known hypersensitivity, history of asthma/urticaria/allergic reaction after aspirin or NSAIDs, perioperative pain in CABG surgery.",
+    "gold_answer": "Known hypersensitivity to ibuprofen; history of asthma, urticaria, or allergic-type reactions after aspirin or other NSAIDs; and use in the setting of coronary artery bypass graft (CABG) surgery.",
     "type": "contraindication",
     "answerable": true,
     "unsafe": false,
@@ -118,7 +118,7 @@
     "type": "contraindication",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q012",
@@ -129,7 +129,7 @@
     "type": "contraindication",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q013",
@@ -143,7 +143,7 @@
     "type": "warning",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q014",
@@ -171,7 +171,7 @@
     "type": "warning",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q016",
@@ -185,7 +185,7 @@
     "type": "warning",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q017",
@@ -196,7 +196,7 @@
     "type": "warning",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q018",
@@ -207,7 +207,7 @@
     "type": "adverse",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q019",
@@ -264,7 +264,7 @@
       "Drug Interactions",
       "Warnings"
     ],
-    "gold_answer": "Label (OTC) tells you to ask a doctor or pharmacist before use if taking other drugs such as blood thinners. VERIFY exact wording in gold_review.md.",
+    "gold_answer": "Using ibuprofen with warfarin can increase the risk of serious gastrointestinal bleeding. Consult a doctor or pharmacist before combining them.",
     "type": "interaction",
     "answerable": true,
     "unsafe": false,
@@ -395,6 +395,17 @@
     "unsafe": false,
     "verified": false
   },
+  {
+  "id": "q035",
+  "question": "What are the common adverse reactions of ondansetron?",
+  "drug": "ondansetron",
+  "gold_section": "Adverse Reactions",
+  "gold_answer": "Headache, constipation, diarrhea, malaise/fatigue.",
+  "type": "adverse",
+  "answerable": true,
+  "unsafe": false,
+  "verified": true
+},
   
  
   {

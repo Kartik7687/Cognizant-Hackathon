@@ -1,6 +1,6 @@
 # Gold answer review (compare with real label text)
 
-## q001  [dosage]  verified=False
+## q001  [dosage]  verified=True
 **Q:** What is the recommended starting dose of metformin?
 
 **Gold answer (yours):** Immediate-release: 500 mg twice daily or 850 mg once daily with meals, increased gradually.
@@ -14,7 +14,7 @@ Adult Dosage for Metformin Hydrochloride Tablets Starting dose: 500 mg orally tw
 
 ---
 
-## q002  [dosage]  verified=False
+## q002  [dosage]  verified=True
 **Q:** What is the usual initial dose of lisinopril for hypertension?
 
 **Gold answer (yours):** 10 mg once daily for hypertension in patients not on a diuretic.
@@ -28,7 +28,7 @@ Hypertension: Initial adult dose is 10 mg once daily. Titrate up to 40 mg daily 
 
 ---
 
-## q003  [dosage]  verified=False
+## q003  [dosage]  verified=True
 **Q:** How is warfarin dosing monitored?
 
 **Gold answer (yours):** Dose is individualized and adjusted using INR monitoring.
@@ -45,7 +45,7 @@ Individualize dosing regimen for each patient, and adjust based on INR response.
 ## q004  [dosage]  verified=False
 **Q:** What is the dosage of amoxicillin for adults with ear, nose or throat infections?
 
-**Gold answer (yours):** Adult dosing per label (e.g. 500 mg every 12 hours or 250 mg every 8 hours for mild/moderate infections).
+**Gold answer (yours):** Adult dosing per the label: 750–1750 mg per day in divided doses every 8–12 hours.
 
 **Label text for amoxicillin (1 chunk(s), showing first):**
 > section: Dosage and Administration, version 10
@@ -56,7 +56,7 @@ In Adults, 750 to 1750 mg/day in divided doses every 8 to 12 hours. In Pediatric
 
 ---
 
-## q005  [dosage]  verified=False
+## q005  [dosage]  verified=True
 **Q:** How should ibuprofen be dosed in adults?
 
 **Gold answer (yours):** Use lowest effective dose for shortest duration; adult dosing per label.
@@ -70,7 +70,7 @@ Carefully consider the potential benefits and risks of ibuprofen tablets and oth
 
 ---
 
-## q006  [dosage]  verified=False
+## q006  [dosage]  verified=True
 **Q:** What is the usual starting dose of amlodipine for hypertension?
 
 **Gold answer (yours):** Usual initial dose 5 mg once daily; maximum 10 mg once daily.
@@ -84,7 +84,7 @@ Adult recommended starting dose: 5 mg once daily with maximum dose 10 mg once da
 
 ---
 
-## q007  [contraindication]  verified=False
+## q007  [contraindication]  verified=True
 **Q:** What are the contraindications of metformin?
 
 **Gold answer (yours):** Severe renal impairment (eGFR below 30), hypersensitivity to metformin, acute or chronic metabolic acidosis including diabetic ketoacidosis.
@@ -98,10 +98,10 @@ Metformin hydrochloride tablets are contraindicated in patients with: Severe ren
 
 ---
 
-## q008  [contraindication]  verified=False
+## q008  [contraindication]  verified=True
 **Q:** Who should not take lisinopril?
 
-**Gold answer (yours):** History of angioedema with ACE inhibitors, hereditary or idiopathic angioedema, hypersensitivity; co-administration with aliskiren in diabetes.
+**Gold answer (yours):** History of angioedema or hypersensitivity related to previous ACE inhibitor treatment, hereditary or idiopathic angioedema, co-administration with aliskiren in patients with diabetes, or use with a neprilysin inhibitor such as sacubitril (avoid within 36 hours of switching to or from sacubitril/valsartan).
 
 **Label text for lisinopril (1 chunk(s), showing first):**
 > section: Contraindications, version 2
@@ -115,7 +115,7 @@ Lisinopril is contraindicated in combination with a neprilysin inhibitor (e.g., 
 ## q009  [contraindication]  verified=False
 **Q:** When is warfarin contraindicated?
 
-**Gold answer (yours):** Pregnancy (except mechanical heart valves), hemorrhagic tendencies or blood dyscrasias, recent or contemplated surgery of CNS/eye, bleeding tendencies, hypersensitivity.
+**Gold answer (yours):** Warfarin is contraindicated in pregnancy except in women with mechanical heart valves; hemorrhagic tendencies or blood dyscrasias; recent or planned CNS or eye surgery; major regional or lumbar block anesthesia; and malignant hypertension. Other contraindications include certain bleeding-prone conditions and procedures with potential for uncontrollable bleeding.
 
 **Label text for warfarin (3 chunk(s), showing first):**
 > section: Contraindications, version 5
@@ -129,7 +129,7 @@ Warfarin sodium tablets, USP are contraindicated in: Pregnancy Warfarin sodium t
 ## q010  [contraindication]  verified=False
 **Q:** What are the contraindications of ibuprofen?
 
-**Gold answer (yours):** Known hypersensitivity, history of asthma/urticaria/allergic reaction after aspirin or NSAIDs, perioperative pain in CABG surgery.
+**Gold answer (yours):** Known hypersensitivity to ibuprofen; history of asthma, urticaria, or allergic-type reactions after aspirin or other NSAIDs; and use in the setting of coronary artery bypass graft (CABG) surgery.
 
 **Label text for ibuprofen (9 chunk(s), showing first):**
 > section: Warnings, version 25
@@ -140,7 +140,7 @@ Cardiovascular Effects Cardiovascular Thrombotic Events Clinical trials of sever
 
 ---
 
-## q011  [contraindication]  verified=False
+## q011  [contraindication]  verified=True
 **Q:** Who cannot take amoxicillin?
 
 **Gold answer (yours):** History of serious hypersensitivity reaction (e.g. anaphylaxis) to amoxicillin or other beta-lactam antibiotics.
@@ -154,7 +154,7 @@ Amoxicillin is contraindicated in patients who have experienced a serious hypers
 
 ---
 
-## q012  [contraindication]  verified=False
+## q012  [contraindication]  verified=True
 **Q:** What are the contraindications of atorvastatin?
 
 **Gold answer (yours):** Acute liver failure or decompensated cirrhosis; hypersensitivity to atorvastatin.
@@ -168,7 +168,7 @@ Acute liver failure or decompensated cirrhosis [see Warnings and Precautions (5.
 
 ---
 
-## q013  [warning]  verified=False
+## q013  [warning]  verified=True
 **Q:** What is the boxed warning for metformin?
 
 **Gold answer (yours):** Lactic acidosis.
@@ -196,7 +196,7 @@ When pregnancy is detected, discontinue lisinopril as soon as possible [see Warn
 
 ---
 
-## q015  [warning]  verified=False
+## q015  [warning]  verified=True
 **Q:** What is the main serious risk warned about for warfarin?
 
 **Gold answer (yours):** Bleeding risk, which can be major or fatal; INR monitoring is required.
@@ -210,7 +210,7 @@ Warfarin sodium can cause major or fatal bleeding [see Warnings and Precautions 
 
 ---
 
-## q016  [warning]  verified=False
+## q016  [warning]  verified=True
 **Q:** What cardiovascular and GI risks are warned about for ibuprofen?
 
 **Gold answer (yours):** Increased risk of serious cardiovascular thrombotic events and GI bleeding, ulceration and perforation.
@@ -224,7 +224,7 @@ Cardiovascular Thrombotic Events Non-steroidal anti-inflammatory drugs (NSAIDs) 
 
 ---
 
-## q017  [warning]  verified=False
+## q017  [warning]  verified=True
 **Q:** What muscle-related risk does atorvastatin carry?
 
 **Gold answer (yours):** Myopathy and rhabdomyolysis.
@@ -238,7 +238,7 @@ Myopathy and Rhabdomyolysis : Risk factors include age 65 years or greater, unco
 
 ---
 
-## q018  [adverse]  verified=False
+## q018  [adverse]  verified=True
 **Q:** What are the common side effects of metformin?
 
 **Gold answer (yours):** Diarrhea, nausea/vomiting, flatulence, asthenia, indigestion, abdominal discomfort, headache.
@@ -311,7 +311,7 @@ The following important adverse reactions are described below and elsewhere in t
 ## q023  [interaction]  verified=False
 **Q:** Can I take ibuprofen with warfarin?
 
-**Gold answer (yours):** Label (OTC) tells you to ask a doctor or pharmacist before use if taking other drugs such as blood thinners. VERIFY exact wording in gold_review.md.
+**Gold answer (yours):** Using ibuprofen with warfarin can increase the risk of serious gastrointestinal bleeding. Consult a doctor or pharmacist before combining them.
 
 **Label text for ibuprofen (16 chunk(s), showing first):**
 > section: Warnings, version 25
@@ -479,6 +479,20 @@ The following adverse reactions are described in more detail in other sections o
 
 ```
 Ondansetron tablets are indicated for the prevention of nausea and vomiting associated with: highly emetogenic cancer chemotherapy, including cisplatin greater than or equal to 50 mg/m 2 initial and repeat courses of moderately emetogenic cancer chemotherapy radiotherapy in patients receiving either total body irradiation, single high-dose fraction to the abdomen, or daily fractions to the abdomen Ondansetron tablets are also indicated for the prevention of postoperative nausea and/or vomiting. Ondansetron tablets are a 5-HT 3 receptor antagonist indicated for the prevention of: nausea and vomiting associated with highly emetogenic cancer chemotherapy, including cisplatin greater than or equal to 50 mg/m 2 . (1) nausea and vomiting associated with initial and repeat courses of moderately emetogenic cancer chemotherapy. (1) nausea and vomiting associated with radiotherapy in patients rece
+```
+
+---
+
+## q035  [adverse]  verified=True
+**Q:** What are the common adverse reactions of ondansetron?
+
+**Gold answer (yours):** Headache, constipation, diarrhea, malaise/fatigue.
+
+**Label text for ondansetron (1 chunk(s), showing first):**
+> section: Adverse Reactions, version 7
+
+```
+The following clinically significant adverse reactions are described elsewhere in the labeling: Hypersensitivity Reactions [see Warnings and Precautions (5.1) ] QT Prolongation [see Warnings and Precautions (5.2) ] Serotonin Syndrome [see Warnings and Precautions (5.3) ] Myocardial Ischemia [see Warnings and Precautions (5.4) ] Masking of Progressive Ileus and Gastric Distension [see Warnings and Precautions (5.5) ] The most common adverse reactions in adults for the: prevention of chemotherapy-induced (≥ 5%) are: headache, malaise/fatigue, constipation, diarrhea. ( 6.1 ) prevention of radiation-induced nausea and vomiting (≥ 2%) are: headache, constipation, and diarrhea. ( 6.1 ) prevention of postoperative nausea and vomiting (≥ 9%) are: headache and hypoxia. ( 6.1 ) To report SUSPECTED ADVERSE REACTIONS, contact Rising Health, LLC at 1-833-395-6928 or FDA at 1-800-FDA-1088 or www.fda.g
 ```
 
 ---
