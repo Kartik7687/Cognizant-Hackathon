@@ -492,7 +492,7 @@
     "id": "q045",
     "question": "What liver warning does acetaminophen have?",
     "drug": "acetaminophen",
-    "gold_section": "Product Information",
+    "gold_section": "Overdosage",
     "gold_answer": "Severe liver damage may occur if more than the maximum daily amount is taken, with other acetaminophen-containing drugs, or with regular alcohol use. VERIFY.",
     "type": "warning",
     "answerable": true,
