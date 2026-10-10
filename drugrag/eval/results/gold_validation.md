@@ -1,5 +1,5 @@
 # Gold set validation
 
-Checked 45 answerable questions: **45 OK**, **0 with problems**.
+Checked 42 answerable questions: **42 OK**, **0 with problems**.
 
 All answerable questions have matching chunks.

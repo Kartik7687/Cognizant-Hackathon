@@ -26,7 +26,7 @@ EXAMPLES = [
 ]
 
 # --------------------------------------------------------------------------
-# Loading (cached)
+# Loading (cache)
 # --------------------------------------------------------------------------
 @st.cache_resource(show_spinner="Loading index and models...")
 def load_retriever(index_dir: str, reranker: str):
@@ -36,14 +36,14 @@ def load_retriever(index_dir: str, reranker: str):
 
 def get_answer_fn():
     try:
-        from drugrag.generation.answer import answer  # Ankita
+        from drugrag.generation.answer import answer  
         return answer, True
     except Exception:
         return None, False
 
 
 def stub_answer(query: str, hits, mode: str) -> str:
-    """Placeholder until Ankita's answer() is wired in."""
+    
     if not hits:
         return "Direct answer: Not found in the label.\n\n**Sources:** none"
     h = hits[0].chunk
@@ -107,20 +107,47 @@ def source_header(c) -> str:
             f"{getattr(c, 'effective_date', 'n/a')} | page {getattr(c, 'page', 'N/A')}")
 
 
+
+
 def render_sources(hits, answer: str):
     if not hits:
         return
+
     cited = set(cited_indices(answer))
     st.markdown("**Sources**")
+
+    seen_sources = set()
+
     for i, h in enumerate(hits, start=1):
         c = h.chunk
+        
+
+        source_key = (
+            getattr(c, "drug_name", ""),
+            getattr(c, "section", ""),
+            getattr(c, "text", "")
+        )
+
+        if source_key in seen_sources:
+            continue
+        seen_sources.add(source_key)
+
         tag = "cited" if i in cited else "retrieved"
-        with st.expander(f"[{i}] {source_header(c)}  ({tag}, score {h.score:.3f})", expanded=(i in cited and len(cited) <= 2)):
+
+        with st.expander(
+            f"[{i}] {source_header(c)} — {c.text[:70]}... ({tag}, score {h.score:.3f})",
+            expanded=(i in cited and len(cited) <= 2)
+        ):
             claims = claims_for_citation(answer, i) if i in cited else []
-            st.markdown(highlight(c.text, claims), unsafe_allow_html=True)
+            st.markdown(
+                highlight(c.text, claims),
+                unsafe_allow_html=True
+            )
+
             url = getattr(c, "source_url", "")
             if url:
                 st.markdown(f"[Open on DailyMed]({url})")
+
 
 
 # --------------------------------------------------------------------------
@@ -199,7 +226,7 @@ if query:
             for note in getattr(res, "notes", []) or []:
                 st.caption(f"Note: {note}")
 
-            # ---- generate (prefer Ankita's streaming if she provides one)
+           
             full = ""
             try:
                 stream_fn = None

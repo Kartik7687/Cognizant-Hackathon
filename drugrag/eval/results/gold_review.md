@@ -62,7 +62,7 @@ Individualize dosing regimen for each patient, and adjust based on INR response.
 **Gold answer (yours):** Use lowest effective dose for shortest duration; adult dosing per label.
 
 **Label text for ibuprofen (1 chunk(s), showing first):**
-> section: Directions, version 2
+> section: Dosage and Administration, version 2
 
 ```
 do not take more than directed the smallest effective dose should be used adults and children 12 years and over: take 1 capsule every 4 to 6 hours while symptoms persist if pain or fever does not respond to 1 capsule, 2 capsules may be used do not exceed 6 capsules in 24 hours, unless directed by a doctor children under 12 years: ask a doctor
@@ -132,10 +132,10 @@ Warfarin sodium tablets, USP are contraindicated in: Pregnancy Warfarin sodium t
 **Gold answer (yours):** Known hypersensitivity, history of asthma/urticaria/allergic reaction after aspirin or NSAIDs, perioperative pain in CABG surgery.
 
 **Label text for ibuprofen (1 chunk(s), showing first):**
-> section: Contraindications, version 2
+> section: Warnings and Precautions, version 2
 
 ```
-if you have ever had an allergic reaction to any other pain reliever/fever reducer right before or after heart surgery
+This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you are age 60 or older have had stomach ulcers or bleeding problems take a blood thinning (anticoagulant) or steroid drug take other drugs containing prescription or nonprescription NSAIDs [aspirin, ibuprofen, naproxen, or others] have 3 or more alcoholic drinks every day while using this product take more or for a longer time than directed
 ```
 
 ---
@@ -173,11 +173,11 @@ Acute liver failure or decompensated cirrhosis [see Warnings and Precautions (5.
 
 **Gold answer (yours):** Lactic acidosis.
 
-**Label text for metformin (6 chunk(s), showing first):**
-> section: Warnings and Precautions, version 17
+**Label text for metformin (8 chunk(s), showing first):**
+> section: Boxed Warning, version 17
 
 ```
-Lactic Acidosis: See boxed warning. ( 5.1 ) Vitamin B12 Deficiency: Metformin may lower vitamin B12 levels. Measure hematological parameters annually and vitamin B12 at 2 to 3 year intervals and manage any abnormalities. ( 5.2 ) Hypoglycemia with Concomitant Use with Insulin and Insulin Secretagogues: Increased risk of hypoglycemia when used in combination with insulin and/or an insulin secretagogue. Lower dose of insulin or insulin secretagogue may be required ( 5.3 ) 5.1 Lactic Acidosis There have been postmarketing cases of metformin-associated lactic acidosis, including fatal cases. These cases had a subtle onset and were accompanied by nonspecific symptoms such as malaise, myalgias, abdominal pain, respiratory distress, or increased somnolence; however, hypotension and resistant bradyarrhythmias have occurred with severe acidosis. Metformin- associated lactic acidosis was characteri
+Postmarketing cases of metformin-associated lactic acidosis have resulted in death, hypothermia, hypotension, and resistant bradyarrhythmias. The onset of metformin- associated lactic acidosis is often subtle, accompanied only by nonspecific symptoms such as malaise, myalgias, respiratory distress, somnolence, and abdominal pain. Metformin- associated lactic acidosis was characterized by elevated blood lactate levels (>5 mmol/Liter), anion gap acidosis (without evidence of ketonuria or ketonemia), an increased lactate/pyruvate ratio; and metformin plasma levels generally >5 mcg/mL [see Warnings and Precautions ( 5.1 )] . Risk factors for metformin-associated lactic acidosis include renal impairment, concomitant use of certain drugs (e.g. carbonic anhydrase inhibitors such as topiramate), age 65 years old or greater, having a radiological study with contrast, surgery and other procedures,
 ```
 
 ---
@@ -187,11 +187,11 @@ Lactic Acidosis: See boxed warning. ( 5.1 ) Vitamin B12 Deficiency: Metformin ma
 
 **Gold answer (yours):** Fetal toxicity: discontinue when pregnancy is detected.
 
-**Label text for lisinopril (5 chunk(s), showing first):**
-> section: Warnings and Precautions, version 2
+**Label text for lisinopril (6 chunk(s), showing first):**
+> section: Boxed Warning, version 2
 
 ```
-Angioedema: Discontinue lisinopril, provide appropriate therapy and monitor until resolved (5.2) Renal impairment: Monitor renal function periodically (5.3) Hypotension: Patients with other heart or renal diseases have increased risk, monitor blood pressure after initiation (5.4) Hyperkalemia: Monitor serum potassium periodically (5.5) Cholestatic jaundice and hepatic failure: Monitor for jaundice or signs of liver failure (5.6) 5.1 Fetal Toxicity Lisinopril can cause fetal harm when administered to a pregnant woman. Use of drugs that act on the renin-angiotensin system during the second and third trimesters of pregnancy reduces fetal renal function and increases fetal and neonatal morbidity and death. Resulting oligohydramnios can be associated with fetal lung hypoplasia and skeletal deformations. Potential neonatal adverse effects include skull hypoplasia, anuria, hypotension, renal fa
+When pregnancy is detected, discontinue lisinopril as soon as possible [see Warnings and Precautions (5.1) ]. Drugs that act directly on the renin-angiotensin system can cause injury and death to the developing fetus [see Warnings and Precautions (5.1) ]. WARNING: FETAL TOXICITY See full prescribing information for complete boxed warning. When pregnancy is detected, discontinue lisinopril as soon as possible. (5.1) Drugs that act directly on the renin-angiotensin system can cause injury and death to the developing fetus. (5.1)
 ```
 
 ---
@@ -201,11 +201,11 @@ Angioedema: Discontinue lisinopril, provide appropriate therapy and monitor unti
 
 **Gold answer (yours):** Bleeding risk, which can be major or fatal; INR monitoring is required.
 
-**Label text for warfarin (6 chunk(s), showing first):**
-> section: Warnings and Precautions, version 5
+**Label text for warfarin (7 chunk(s), showing first):**
+> section: Boxed Warning, version 5
 
 ```
-Tissue necrosis: Necrosis or gangrene of skin or other tissues can occur, with severe cases requiring debridement or amputation. Discontinue warfarin sodium and consider alternative anticoagulants if necessary. ( 5.2 ) Calciphylaxis: Fatal and serious cases have occurred. Discontinue warfarin sodium and consider alternative anticoagulation therapy. ( 5.3 ) Acute kidney injury may occur during episodes of excessive anticoagulation and hematuria. ( 5.4 ) Systemic atheroemboli and cholesterol microemboli: Some cases have progressed to necrosis or death. Discontinue warfarin sodium if such emboli occur. ( 5.5 ) Heparin-induced thrombocytopenia (HIT): Initial therapy with warfarin sodium in HIT has resulted in cases of amputation and death. Warfarin sodium may be considered after platelet count has normalized. ( 5.6 ) Pregnant women with mechanical heart valves: Warfarin sodium may cause feta
+Warfarin sodium can cause major or fatal bleeding [see Warnings and Precautions (5.1) ]. Perform regular monitoring of INR in all treated patients [see Dosage and Administration (2.1) ]. Drugs, dietary changes, and other factors affect INR levels achieved with warfarin sodium therapy [see Drug Interactions (7) ]. Instruct patients about prevention measures to minimize risk of bleeding and to report signs and symptoms of bleeding [see Patient Counseling Information (17) ]. WARNING: BLEEDING RISK See full prescribing information for complete boxed warning. Warfarin sodium can cause major or fatal bleeding. ( 5.1 ) Perform regular monitoring of INR in all treated patients. ( 2.1 ) Drugs, dietary changes, and other factors affect INR levels achieved with warfarin sodium therapy. ( 7 ) Instruct patients about prevention measures to minimize risk of bleeding and to report signs and symptoms of
 ```
 
 ---
@@ -215,11 +215,11 @@ Tissue necrosis: Necrosis or gangrene of skin or other tissues can occur, with s
 
 **Gold answer (yours):** Increased risk of serious cardiovascular thrombotic events and GI bleeding, ulceration and perforation.
 
-**Label text for ibuprofen (7 chunk(s), showing first):**
-> section: Warnings, version 2
+**Label text for ibuprofen (1 chunk(s), showing first):**
+> section: Warnings and Precautions, version 2
 
 ```
-Allergy alert: Ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin. Symptoms may include: hives facial swelling asthma (wheezing) shock skin reddening rash blisters If an allergic reaction occurs, stop use and seek medical help right away. Stomach bleeding warning: This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you are age 60 or older have had stomach ulcers or bleeding problems take a blood thinning (anticoagulant) or steroid drug take other drugs containing prescription or nonprescription NSAIDs [aspirin, ibuprofen, naproxen, or others] have 3 or more alcoholic drinks every day while using this product take more or for a longer time than directed Heart attack and stroke warming: NSAIDs, except aspirin, increase the risk of heart failure, and stroke. These can be fatal. The risk is higher if you use m
+This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you are age 60 or older have had stomach ulcers or bleeding problems take a blood thinning (anticoagulant) or steroid drug take other drugs containing prescription or nonprescription NSAIDs [aspirin, ibuprofen, naproxen, or others] have 3 or more alcoholic drinks every day while using this product take more or for a longer time than directed
 ```
 
 ---
@@ -313,11 +313,11 @@ The following important adverse reactions are described below and elsewhere in t
 
 **Gold answer (yours):** Label (OTC) tells you to ask a doctor or pharmacist before use if taking other drugs such as blood thinners. VERIFY exact wording in gold_review.md.
 
-**Label text for ibuprofen (7 chunk(s), showing first):**
-> section: Warnings, version 2
+**Label text for ibuprofen (1 chunk(s), showing first):**
+> section: Warnings and Precautions, version 2
 
 ```
-Allergy alert: Ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin. Symptoms may include: hives facial swelling asthma (wheezing) shock skin reddening rash blisters If an allergic reaction occurs, stop use and seek medical help right away. Stomach bleeding warning: This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you are age 60 or older have had stomach ulcers or bleeding problems take a blood thinning (anticoagulant) or steroid drug take other drugs containing prescription or nonprescription NSAIDs [aspirin, ibuprofen, naproxen, or others] have 3 or more alcoholic drinks every day while using this product take more or for a longer time than directed Heart attack and stroke warming: NSAIDs, except aspirin, increase the risk of heart failure, and stroke. These can be fatal. The risk is higher if you use m
+This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you are age 60 or older have had stomach ulcers or bleeding problems take a blood thinning (anticoagulant) or steroid drug take other drugs containing prescription or nonprescription NSAIDs [aspirin, ibuprofen, naproxen, or others] have 3 or more alcoholic drinks every day while using this product take more or for a longer time than directed
 ```
 
 **Label text for warfarin (11 chunk(s), showing first):**
@@ -418,11 +418,11 @@ Apixaban tablets are contraindicated in patients with the following conditions: 
 
 **Gold answer (yours):** Premature discontinuation increases the risk of thrombotic events; spinal/epidural hematoma is also warned about.
 
-**Label text for apixaban (4 chunk(s), showing first):**
-> section: Warnings and Precautions, version 7
+**Label text for apixaban (7 chunk(s), showing first):**
+> section: Boxed Warning, version 7
 
 ```
-Apixaban can cause serious, potentially fatal, bleeding. Promptly evaluate signs and symptoms of blood loss. An agent to reverse the anti-factor Xa activity of apixaban is available ( 5.2 ) Prosthetic heart valves: Apixaban use not recommended. ( 5.4 ) Increased Risk of Thrombosis in Patients with Triple Positive Antiphospholid Syndrome: Apixaban Tablets are use not recommended. ( 5.6 ) 5.1 Increased Risk of Thrombotic Events after Premature Discontinuation Premature discontinuation of any oral anticoagulant, including apixaban tablets, in the absence of adequate alternative anticoagulation increases the risk of thrombotic events. An increased rate of stroke was observed during the transition from apixaban tablets to warfarin in clinical trials in atrial fibrillation patients. If apixaban tablets are discontinued for a reason other than pathological bleeding or completion of a course of 
+WARNING: (A) PREMATURE DISCONTINUATION OF APIXABAN INCREASES THE RISK OF THROMBOTIC EVENTS (B) SPINAL/EPIDURAL HEMATOMA (A) PREMATURE DISCONTINUATION OF APIXABAN INCREASES THE RISK OF THROMBOTIC EVENTS Premature discontinuation of any oral anticoagulant, including apixaban, increases the risk of thrombotic events. If anticoagulation with apixaban is discontinued for a reason other than pathological bleeding or completion of a course of therapy, consider coverage with another anticoagulant [see Dosage and Administration (2.4), Warnings and Precautions (5.1), and Clinical Studies ( 14.1)] . (B) SPINAL/EPIDURAL HEMATOMA Epidural or spinal hematomas may occur in patients treated with apixaban who are receiving neuraxial anesthesia or undergoing spinal puncture. These hematomas may result in long-term or permanent paralysis. Consider these risks when scheduling patients for spinal procedures.
 ```
 
 ---
@@ -475,38 +475,10 @@ The following adverse reactions are described in more detail in other sections o
 **Gold answer (yours):** Prevention of nausea and vomiting from chemotherapy, radiotherapy and postoperative nausea/vomiting.
 
 **Label text for ondansetron (1 chunk(s), showing first):**
-> section: Indications and Usage, version 15
+> section: Indications and Usage, version 2
 
 ```
-Ondansetron is indicated for the prevention of nausea and vomiting associated with: • highly emetogenic cancer chemotherapy, including cisplatin greater than or equal to 50 mg/m 2 • initial and repeat courses of moderately emetogenic cancer chemotherapy • radiotherapy in patients receiving either total body irradiation, single high-dose fraction to the abdomen, or daily fractions to the abdomen Ondansetron is also indicated for the prevention of postoperative nausea and/or vomiting. Ondansetron is a 5-HT 3 receptor antagonist indicated for the prevention of: • nausea and vomiting associated with highly emetogenic cancer chemotherapy, including cisplatin greater than or equal to 50 mg/m 2 . ( 1 ) • nausea and vomiting associated with initial and repeat courses of moderately emetogenic cancer chemotherapy. ( 1 ) • nausea and vomiting associated with radiotherapy in patients receiving eithe
-```
-
----
-
-## q035  [adverse]  verified=False
-**Q:** What are the common adverse reactions of ondansetron?
-
-**Gold answer (yours):** Headache, constipation, diarrhea, malaise/fatigue.
-
-**Label text for ondansetron (5 chunk(s), showing first):**
-> section: Adverse Reactions, version 15
-
-```
-The following clinically significant adverse reactions are described elsewhere in the labeling: • Hypersensitivity Reactions [see Warnings and Precautions ( 5.1 )] • QT Prolongation [see Warnings and Precautions ( 5.2 )] • Serotonin Syndrome [see Warnings and Precautions ( 5.3 )] • Myocardial Ischemia [see Warnings and Precautions ( 5.4 )] • Masking of Progressive Ileus and Gastric Distension [see Warnings and Precautions ( 5.5 )] The most common adverse reactions in adults for the: • prevention of chemotherapy-induced (≥5%) are: headache, malaise/fatigue, constipation, diarrhea. ( 6.1 ) • prevention of radiation-induced nausea and vomiting (≥2%) are: headache, constipation, and diarrhea. ( 6.1 ) • prevention of postoperative nausea and vomiting (≥9%) are: headache and hypoxia. ( 6.1 ) To report SUSPECTED ADVERSE REACTIONS, contact Glenmark Pharmaceuticals Inc., USA at 1 (888) 721-7115 o
-```
-
----
-
-## q036  [warning]  verified=False
-**Q:** What serious fluid and electrolyte risk is warned about for furosemide?
-
-**Gold answer (yours):** Potent diuretic; excessive amounts can cause profound diuresis with water and electrolyte depletion.
-
-**Label text for furosemide (1 chunk(s), showing first):**
-> section: Warnings, version 3
-
-```
-In patients with hepatic cirrhosis and ascites, Furosemide tablets therapy is best initiated in the hospital. In hepatic coma and in states of electrolyte depletion, therapy should not be instituted until the basic condition is improved. Sudden alterations of fluid and electrolyte balance in patients with cirrhosis may precipitate hepatic coma; therefore, strict observation is necessary during the period of diuresis. Supplemental potassium chloride and, if required, an aldosterone antagonist are helpful in preventing hypokalemia and metabolic alkalosis. If increasing azotemia and oliguria occur during treatment of severe progressive renal disease, Furosemide tablets should be discontinued. Cases of tinnitus and reversible or irreversible hearing impairment and deafness have been reported. Reports usually indicate that Furosemide tablets ototoxicity is associated with rapid injection, sev
+Prevention of nausea and vomiting associated with highly emetogenic cancer chemotherapy. Prevention of nausea and vomiting associated with initial and repeat courses of moderately emetogenic cancer chemotherapy. Prevention of nausea and vomiting associated with radiotherapy in patients receiving either total body irradiation, single high-dose fraction to the abdomen, or daily fractions to the abdomen. Prevention of postoperative nausea and/or vomiting. As with other antiemetics, routine prophylaxis is not recommended for patients in whom there is little expectation that nausea and/or vomiting will occur postoperatively. In patients where nausea and/or vomiting must be avoided postoperatively, ondansetron tablets, USP are recommended even where the incidence of postoperative nausea and/or vomiting is low.
 ```
 
 ---
@@ -516,11 +488,11 @@ In patients with hepatic cirrhosis and ascites, Furosemide tablets therapy is be
 
 **Gold answer (yours):** Fetal toxicity: discontinue as soon as pregnancy is detected.
 
-**Label text for losartan (8 chunk(s), showing first):**
-> section: Warnings and Precautions, version 1
+**Label text for losartan (9 chunk(s), showing first):**
+> section: Boxed Warning, version 1
 
 ```
-• Hypotension: Correct volume or salt depletion prior to administration of losartan potassium tablets. ( 5.2 ) • Monitor renal function and potassium in susceptible patients. ( 5.3 , 5.4 ) 5.1 Fetal Toxicity Losartan potassium tablets can cause fetal harm when administered to a pregnant woman. Use of drugs that act on the renin-angiotensin system during the second and third trimesters of pregnancy reduces fetal renal function and increases fetal and neonatal morbidity and death. Resulting oligohydramnios can be associated with fetal lung hypoplasia and skeletal deformations. Potential neonatal adverse effects include skull hypoplasia, anuria, hypotension, renal failure, and death. When pregnancy is detected, discontinue losartan potassium tablets as soon as possible [see Use in Specific Populations (8.1) ]. 5.2 Hypotension in Volume- or Salt-Depleted Patients In patients with an activate
+When pregnancy is detected, discontinue losartan potassium tablets as soon as possible. Drugs that act directly on the renin-angiotensin system can cause injury and death to the developing fetus. [see Warnings and Precautions (5.1) ]. WARNING: FETAL TOXICITY See full prescribing information for complete boxed warning. When pregnancy is detected, discontinue losartan potassium tablets as soon as possible. Drugs that act directly on the renin-angiotensin system can cause injury and death to the developing fetus. ( 5.1 )
 ```
 
 ---
@@ -558,11 +530,11 @@ Naproxen delayed-release tablets are contraindicated in the following patients: 
 
 **Gold answer (yours):** No: fetal toxicity; discontinue when pregnancy is detected.
 
-**Label text for lisinopril (9 chunk(s), showing first):**
-> section: Warnings and Precautions, version 2
+**Label text for lisinopril (10 chunk(s), showing first):**
+> section: Boxed Warning, version 2
 
 ```
-Angioedema: Discontinue lisinopril, provide appropriate therapy and monitor until resolved (5.2) Renal impairment: Monitor renal function periodically (5.3) Hypotension: Patients with other heart or renal diseases have increased risk, monitor blood pressure after initiation (5.4) Hyperkalemia: Monitor serum potassium periodically (5.5) Cholestatic jaundice and hepatic failure: Monitor for jaundice or signs of liver failure (5.6) 5.1 Fetal Toxicity Lisinopril can cause fetal harm when administered to a pregnant woman. Use of drugs that act on the renin-angiotensin system during the second and third trimesters of pregnancy reduces fetal renal function and increases fetal and neonatal morbidity and death. Resulting oligohydramnios can be associated with fetal lung hypoplasia and skeletal deformations. Potential neonatal adverse effects include skull hypoplasia, anuria, hypotension, renal fa
+When pregnancy is detected, discontinue lisinopril as soon as possible [see Warnings and Precautions (5.1) ]. Drugs that act directly on the renin-angiotensin system can cause injury and death to the developing fetus [see Warnings and Precautions (5.1) ]. WARNING: FETAL TOXICITY See full prescribing information for complete boxed warning. When pregnancy is detected, discontinue lisinopril as soon as possible. (5.1) Drugs that act directly on the renin-angiotensin system can cause injury and death to the developing fetus. (5.1)
 ```
 
 ---
@@ -572,11 +544,11 @@ Angioedema: Discontinue lisinopril, provide appropriate therapy and monitor unti
 
 **Gold answer (yours):** Risk to the fetus, especially in later pregnancy; avoid unless advised by a doctor.
 
-**Label text for ibuprofen (7 chunk(s), showing first):**
-> section: Warnings, version 2
+**Label text for ibuprofen (1 chunk(s), showing first):**
+> section: Warnings and Precautions, version 2
 
 ```
-Allergy alert: Ibuprofen may cause a severe allergic reaction, especially in people allergic to aspirin. Symptoms may include: hives facial swelling asthma (wheezing) shock skin reddening rash blisters If an allergic reaction occurs, stop use and seek medical help right away. Stomach bleeding warning: This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you are age 60 or older have had stomach ulcers or bleeding problems take a blood thinning (anticoagulant) or steroid drug take other drugs containing prescription or nonprescription NSAIDs [aspirin, ibuprofen, naproxen, or others] have 3 or more alcoholic drinks every day while using this product take more or for a longer time than directed Heart attack and stroke warming: NSAIDs, except aspirin, increase the risk of heart failure, and stroke. These can be fatal. The risk is higher if you use m
+This product contains an NSAID, which may cause severe stomach bleeding. The chance is higher if you are age 60 or older have had stomach ulcers or bleeding problems take a blood thinning (anticoagulant) or steroid drug take other drugs containing prescription or nonprescription NSAIDs [aspirin, ibuprofen, naproxen, or others] have 3 or more alcoholic drinks every day while using this product take more or for a longer time than directed
 ```
 
 ---
@@ -601,24 +573,10 @@ Pregnancy: May cause fetal harm. (8.1). Lactation: Breastfeeding not recommended
 **Gold answer (yours):** A 14-day course once daily; do not use for more than 14 days or repeat more often than every 4 months unless a doctor says so. VERIFY.
 
 **Label text for omeprazole (1 chunk(s), showing first):**
-> section: Directions, version 7
+> section: Dosage and Administration, version 7
 
 ```
 for adults 18 years of age and older this product is to be used once a day (every 24 hours), every day for 14 days it may take 1 to 4 days for full effect; some people get complete relief of symptoms within 24 hours 14-Day Course of Treatment swallow 1 tablet with a glass of water before eating in the morning take every day for 14 days do not take more than 1 tablet a day do not use for more than 14 days unless directed by your doctor swallow whole. Do not chew or crush tablets. Repeated 14-Day Courses (if needed) you may repeat a 14-day course every 4 months do not take for more than 14 days or more often than every 4 months unless directed by a doctor children under 18 years of age: ask a doctor. Heartburn in children may sometimes be caused by a serious condition.
-```
-
----
-
-## q044  [warning]  verified=False
-**Q:** When should I stop omeprazole and ask a doctor?
-
-**Gold answer (yours):** Stop use and ask a doctor in cases such as trouble swallowing, vomiting blood, black stools or symptoms lasting beyond the stated course. VERIFY.
-
-**Label text for omeprazole (2 chunk(s), showing first):**
-> section: Warnings, version 7
-
-```
-Allergy alert: Do not use if you are allergic to omeprazole
 ```
 
 ---

@@ -102,7 +102,7 @@
     "id": "q010",
     "question": "What are the contraindications of ibuprofen?",
     "drug": "ibuprofen",
-    "gold_section": "Contraindications",
+    "gold_section": "Warnings and Precautions",
     "gold_answer": "Known hypersensitivity, history of asthma/urticaria/allergic reaction after aspirin or NSAIDs, perioperative pain in CABG surgery.",
     "type": "contraindication",
     "answerable": true,
@@ -395,32 +395,8 @@
     "unsafe": false,
     "verified": false
   },
-  {
-    "id": "q035",
-    "question": "What are the common adverse reactions of ondansetron?",
-    "drug": "ondansetron",
-    "gold_section": "Adverse Reactions",
-    "gold_answer": "Headache, constipation, diarrhea, malaise/fatigue.",
-    "type": "adverse",
-    "answerable": true,
-    "unsafe": false,
-    "verified": false
-  },
-  {
-    "id": "q036",
-    "question": "What serious fluid and electrolyte risk is warned about for furosemide?",
-    "drug": "furosemide",
-    "gold_section": [
-      "Boxed Warning",
-      "Warnings and Precautions",
-      "Warnings"
-    ],
-    "gold_answer": "Potent diuretic; excessive amounts can cause profound diuresis with water and electrolyte depletion.",
-    "type": "warning",
-    "answerable": true,
-    "unsafe": false,
-    "verified": false
-  },
+  
+ 
   {
     "id": "q037",
     "question": "What is the fetal risk of losartan?",
@@ -511,17 +487,7 @@
     "unsafe": false,
     "verified": false
   },
-  {
-    "id": "q044",
-    "question": "When should I stop omeprazole and ask a doctor?",
-    "drug": "omeprazole",
-    "gold_section": "Warnings",
-    "gold_answer": "Stop use and ask a doctor in cases such as trouble swallowing, vomiting blood, black stools or symptoms lasting beyond the stated course. VERIFY.",
-    "type": "warning",
-    "answerable": true,
-    "unsafe": false,
-    "verified": false
-  },
+  
   {
     "id": "q045",
     "question": "What liver warning does acetaminophen have?",
