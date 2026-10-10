@@ -42,6 +42,12 @@ TARGET_SECTIONS = {
     "43680-8": "Nonclinical Toxicology",
     "34092-7": "Clinical Studies",
     "34076-0": "Patient Counseling Information",
+    "34071-1": "Warnings",
+    "34067-9": "Indications and Usage",
+    "34068-7": "Dosage and Administration",
+    "50569-3": "Ask Doctor",
+    "50567-7": "When Using",
+    "50566-9": "Stop Use",
 }
 
 
@@ -54,6 +60,42 @@ def local_name(tag):
 def text_of(element):
     """Extract readable text from an XML element."""
     return " ".join(" ".join(element.itertext()).split())
+
+
+def section_text_without_nested_sections(element):
+    """Extract text while excluding nested sections and excerpts."""
+    parts = []
+
+    def walk(node):
+        for child in node:
+            tag = local_name(child.tag)
+
+            if tag in {"section", "excerpt"}:
+                continue
+
+            if child.text:
+                parts.append(child.text)
+
+            walk(child)
+
+            if child.tail:
+                parts.append(child.tail)
+
+    walk(element)
+    return " ".join(" ".join(parts).split())
+
+def normalize_date(value):
+    value = (value or "").strip()
+
+    # Convert YYYYMMDD to YYYY-MM-DD
+    if re.fullmatch(r"\d{8}", value):
+        return f"{value[:4]}-{value[4:6]}-{value[6:8]}"
+
+    # Keep dates already in YYYY-MM-DD format
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        return value
+
+    return ""
 
 
 def get_metadata(root):
@@ -83,7 +125,7 @@ def get_metadata(root):
                 or (elem.text or "").strip()
             )
 
-    return set_id, version, effective_date
+    return set_id, version, normalize_date(effective_date)
 
 
 def parse_label(xml_path):
@@ -117,12 +159,8 @@ def parse_label(xml_path):
             None,
         )
 
-        if title_element is None:
-            continue
-
-        title = text_of(title_element).upper().strip()
+        title = text_of(title_element).upper().strip() if title_element is not None else ""
         title = re.sub(r"^\d+(?:\.\d+)*\s+", "", title)
-
         
         # Read the official LOINC code from this section's direct <code> element.
         code_element = next(
@@ -164,8 +202,9 @@ def parse_label(xml_path):
         for child in section:
             if child is title_element:
                 continue
-
-            content = text_of(child)
+            if local_name(child.tag) == "section":
+                continue
+            content = section_text_without_nested_sections(child)
             if content:
                 content_parts.append(content)
 
