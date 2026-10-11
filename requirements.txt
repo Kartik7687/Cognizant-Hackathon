@@ -1,9 +1,8 @@
 numpy>=1.26
 pytest>=8.0
-# Real embeddings and reranker (not needed for the offline "hash" embedder or the tests):
-sentence-transformers>=3.0
-# Add as the other modules land:
-# lxml>=5.0            (Shruti: SPL XML parsing)
-# pdfplumber>=0.11     (Shruti: PDF fallback)
-# streamlit>=1.38      (Akansha: UI)
-# requests>=2.32       (Ankita: Ollama client)
+sentence-transformers>=3.0   # bge-small / bge-m3 / bge-reranker-base
+lxml>=5.0                    # SPL XML parsing (data pipeline)
+requests>=2.32               # DailyMed download
+streamlit>=1.38              # UI
+ollama>=0.3                  # generation + LLM judge (also install the Ollama app)
+matplotlib>=3.8              # eval charts
