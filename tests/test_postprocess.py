@@ -25,7 +25,8 @@ def test_split_handles_one_giant_unbroken_sentence():
 
 def test_short_text_untouched_and_tail_not_tiny():
     assert split_text("Short passage that stays whole.", 500) == ["Short passage that stays whole."]
-    parts = split_text("A" * 10 + ". " + "B" * 495 + ". C.", 500)
+    parts = split_text("A" * 10 + ". " + ("word " * 98).strip() + ". C.", 500)
+    assert all(len(p) <= 500 for p in parts)
     assert all(len(p) >= 40 for p in parts)
 
 

@@ -68,23 +68,51 @@ def split_text(text: str, max_chars: int = MAX_CHARS) -> list[str]:
 def _merge_tiny(
     parts: list[str], max_chars: int = MAX_CHARS
 ) -> list[str]:
-    """Merge short fragments where possible without exceeding max_chars."""
+    """Merge short fragments into a neighbour without exceeding max_chars."""
+    parts = [(p or "").strip() for p in parts]
+    parts = [p for p in parts if p]
+
+    # Tiny fragments merge backwards into the previous part when it fits.
     merged: list[str] = []
-
     for part in parts:
-        part = (part or "").strip()
-        if not part:
-            continue
-
         if merged and len(part) < MIN_CHARS:
             combined = f"{merged[-1]} {part}"
             if len(combined) <= max_chars:
                 merged[-1] = combined
                 continue
-
         merged.append(part)
 
+    # A tiny fragment that cannot merge whole is rebalanced with its
+    # neighbour by moving the cut to a word boundary near the middle.
+    i = 0
+    while i < len(merged):
+        if len(merged[i]) < MIN_CHARS and len(merged) >= 2:
+            j = i + 1 if i + 1 < len(merged) else i - 1
+            a, b = sorted((i, j))
+            combined = f"{merged[a]} {merged[b]}"
+            if len(combined) <= max_chars:
+                merged[a:b + 1] = [combined]
+                i = max(a, 0)
+                continue
+            cut = _balanced_cut(combined, max_chars)
+            if cut:
+                merged[a], merged[b] = combined[:cut].strip(), combined[cut:].strip()
+        i += 1
+
     return merged
+
+
+def _balanced_cut(text: str, max_chars: int) -> int:
+    """Space index closest to the middle that leaves both halves valid, or 0."""
+    best, best_gap = 0, None
+    for m in re.finditer(r"\s", text):
+        k = m.start()
+        left, right = k, len(text) - k - 1
+        if MIN_CHARS <= left <= max_chars and MIN_CHARS <= right <= max_chars:
+            gap = abs(left - right)
+            if best_gap is None or gap < best_gap:
+                best, best_gap = k, gap
+    return best
 
 
 def _slug(value: str) -> str:
