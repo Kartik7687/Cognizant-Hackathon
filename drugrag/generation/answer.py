@@ -40,6 +40,13 @@ def detect_not_found(text: str) -> bool:
     )
 
 
+def _shorten(text, limit=900):
+    """Keep advice answers short: cut long label text at a word boundary."""
+    if len(text) <= limit:
+        return text
+    return text[:limit].rsplit(" ", 1)[0] + " ..."
+
+
 def answer(query, hits, mode="patient") -> Answer:
     """
     Generate a drug information answer using retrieved
@@ -70,7 +77,8 @@ def answer(query, hits, mode="patient") -> Answer:
 
     if advice_message:
         if hits:
-            label_context = format_context(hits)
+            label_context = format_context(hits[:2])
+            label_context = _shorten(label_context)
             text = (
                 advice_message
                 + "\n\nWhat the available label information says:\n"

@@ -143,3 +143,11 @@ def test_citation_and_context_format(retriever):
     ctx = format_context(res.hits)
     assert ctx.startswith("[1] Metformin") and "\n\n[2] " in ctx
     assert res.to_dict()["hits"][0]["citation"] == cite
+
+
+def test_reranker_sees_drug_and_section(retriever):
+    seen = []
+    orig = retriever.reranker.score
+    retriever.reranker.score = lambda q, texts: (seen.extend(texts), orig(q, texts))[1]
+    retriever.retrieve("side effects of atorvastatin", mode="hybrid_rerank", top_k=3)
+    assert seen and all(" - " in t.split(":", 1)[0] for t in seen)

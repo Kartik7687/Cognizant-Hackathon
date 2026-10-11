@@ -27,6 +27,12 @@ def check_question(question):
         r"friend|child|son|daughter|husband|wife|partner)"
         r"\s+(?:is|has been)\s+having\s+(?:a\s+)?seizure\b",
         r"\bi\s+am\s+having\s+(?:a\s+)?seizure\b",
+        r"\b(?:my\s+\w+|he|she|they|someone|somebody)\s+"
+        r"(?:accidentally\s+)?(?:took|swallowed)\s+too\s+(?:many|much)\b",
+        r"\b(?:i|my\s+\w+|he|she)\s+(?:took|swallowed|ate)\s+"
+        r"(?:\d{2,}|several|a\s+handful\s+of|a\s+whole\s+bottle\s+of)\s*"
+        r"(?:tablets?|pills?|capsules?)\b",
+        r"\b(?:i|my\s+\w+|he|she)\s+(?:is|am|was)\s+not\s+breathing\b",
     ]
 
     for pattern in emergency_patterns:
@@ -73,6 +79,14 @@ def check_advice(question):
         r"\bcan i skip\b",
         r"\bshould i skip\b",
         r"\bis it safe for me\b",
+        r"\b(?:ok|okay|fine|safe)\s+for\s+me\s+to\b",
+        r"\bhow\s+much\b.*\bcan\s+i\s+(?:give|take)\b",
+        r"\bcan\s+i\s+(?:take|give)\s+\d+\b",
+        r"\b(?:i'?m|i\s+am)\s+(?:pregnant|breastfeeding)\b",
+        r"\bcan\s+i\s+(?:keep|continue)\s+taking\b",
+        r"\bmy\s+(?:correct|right|exact)\s+(?:dose|dosage)\b",
+        r"\bi\s+(?:am|weigh)\s+\d+\s*(?:kg|lbs?|pounds|years)\b",
+        r"\b(?:my|i have)\s+(?:kidney|liver|heart)\s+(?:problems?|disease|failure)\b.*\bdose\b",
     ]
 
     for pattern in advice_patterns:

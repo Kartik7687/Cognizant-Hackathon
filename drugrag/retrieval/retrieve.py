@@ -112,6 +112,10 @@ class Retriever:
             wanted.add("interactions")
         return wanted
 
+    def _rerank_text(self, i: int) -> str:
+        c = self.index.chunks[i]
+        return f"{c.drug_name} - {c.section}: {c.text}"
+
     def _boost(self, idx: int, wanted: set[str]) -> float:
         sec = self.index.chunks[idx].section.lower()
         # word-start match: "indications" must not hit "contraindications"
@@ -177,7 +181,9 @@ class Retriever:
                     ranked = ordered[:top_k]
                 else:
                     cand = ordered[:candidate_k]
-                    ce = self.reranker.score(query, [self.index.chunks[i].text for i, _ in cand])
+                    # Give the cross-encoder the drug and section name, otherwise it cannot
+                    # tell which section answers e.g. a "contraindications" question.
+                    ce = self.reranker.score(query, [self._rerank_text(i) for i, _ in cand])
                     ranked = sorted(((i, float(s)) for (i, _), s in zip(cand, ce)), key=lambda kv: -kv[1])[:top_k]
             else:
                 ranked = ordered[:top_k]
