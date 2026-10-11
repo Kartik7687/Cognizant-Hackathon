@@ -1,15 +1,6 @@
-"""Stopgap clean-up of chunks.jsonl, for output that was already produced.
 
-Fixes only what can be fixed from the chunks themselves:
-  - effective_date YYYYMMDD -> YYYY-MM-DD
-  - brand-name aliases (lowercase) and generic names for drugs downloaded under a brand
-  - drops Principal Display Panel chunks (carton text, no medical content)
-  - splits chunks longer than MAX_CHARS at sentence boundaries
-  - regenerates readable, unique, stable chunk_ids
+"""Clean and split existing drug documentation chunks."""
 
-What it cannot fix (needs the raw XML, see the parser notes): missing sections, boxed warnings,
-LOINC section codes, subsection headings, and the choice of which label was downloaded.
-"""
 from __future__ import annotations
 
 import re
@@ -23,87 +14,145 @@ MAX_CHARS = 1500
 MIN_CHARS = 40
 DROP_SECTIONS = {"Principal Display Panel"}
 
-_SENT_BREAK = re.compile(r"(?<=[.!?])\s+(?=[A-Z0-9(\[•])")
+_SENT_BREAK = re.compile(r"(?<=[.!?])\s+(?=[A-Z0-9\[(•])")
 
 
 def iso_date(value: str) -> str:
-    v = (value or "").strip()
-    if re.fullmatch(r"\d{8}", v):
-        return f"{v[:4]}-{v[4:6]}-{v[6:]}"
-    return v
+    value = (value or "").strip()
+    if re.fullmatch(r"\d{8}", value):
+        return f"{value[:4]}-{value[4:6]}-{value[6:]}"
+    return value
 
 
 def split_text(text: str, max_chars: int = MAX_CHARS) -> list[str]:
-    """Pack whole sentences into parts of at most max_chars (hard-splits a single over-long sentence)."""
-    text = text.strip()
-    if len(text) <= max_chars:
-        return [text]
+    """Split text into non-empty chunks within the character limit."""
+    text = (text or "").strip()
+    if not text or max_chars < 1:
+        return []
+
     parts: list[str] = []
-    cur = ""
-    for sent in _SENT_BREAK.split(text):
-        while len(sent) > max_chars:  # table dumps and lists often have no sentence breaks
-            if cur:
-                parts.append(cur)
-                cur = ""
-            cut = sent.rfind(" ", 0, max_chars)
-            if cut < max_chars // 2:
-                cut = max_chars
-            parts.append(sent[:cut].strip())
-            sent = sent[cut:].lstrip()
-        if not sent:
+    current = ""
+
+    for sentence in _SENT_BREAK.split(text):
+        sentence = sentence.strip()
+        if not sentence:
             continue
-        if cur and len(cur) + 1 + len(sent) > max_chars:
-            parts.append(cur)
-            cur = sent
+
+        while len(sentence) > max_chars:
+            if current:
+                parts.append(current)
+                current = ""
+
+            cut = sentence.rfind(" ", 0, max_chars + 1)
+            if cut <= 0:
+                cut = max_chars
+
+            parts.append(sentence[:cut].strip())
+            sentence = sentence[cut:].strip()
+
+        if not sentence:
+            continue
+
+        if current and len(current) + 1 + len(sentence) > max_chars:
+            parts.append(current)
+            current = sentence
         else:
-            cur = f"{cur} {sent}".strip()
-    if cur:
-        parts.append(cur)
-    return _merge_tiny(parts)
+            current = f"{current} {sentence}".strip()
+
+    if current:
+        parts.append(current)
+
+    return _merge_tiny(parts, max_chars)
 
 
-def _merge_tiny(parts: list[str]) -> list[str]:
-    """Fold any part shorter than MIN_CHARS into its neighbour (may exceed the limit slightly)."""
+def _merge_tiny(
+    parts: list[str], max_chars: int = MAX_CHARS
+) -> list[str]:
+    """Merge short fragments where possible without exceeding max_chars."""
     merged: list[str] = []
-    carry = ""
-    for p in parts:
-        p = f"{carry} {p}".strip() if carry else p
-        carry = ""
-        if len(p) < MIN_CHARS and merged:
-            merged[-1] = f"{merged[-1]} {p}"
-        elif len(p) < MIN_CHARS:
-            carry = p  # leading tiny part: prepend to the next one
-        else:
-            merged.append(p)
-    if carry:
-        merged.append(carry)
+
+    for part in parts:
+        part = (part or "").strip()
+        if not part:
+            continue
+
+        if merged and len(part) < MIN_CHARS:
+            combined = f"{merged[-1]} {part}"
+            if len(combined) <= max_chars:
+                merged[-1] = combined
+                continue
+
+        merged.append(part)
+
     return merged
 
 
-def _slug(s: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
+def _slug(value: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
 
 
-def postprocess(chunks: list[Chunk], max_chars: int = MAX_CHARS) -> list[Chunk]:
+def postprocess(
+    chunks: list[Chunk], max_chars: int = MAX_CHARS
+) -> list[Chunk]:
     out: list[Chunk] = []
     counter: dict[tuple[str, str], int] = defaultdict(int)
-    for c in chunks:
-        if c.section in DROP_SECTIONS:
+
+    for chunk in chunks:
+        if chunk.section in DROP_SECTIONS:
             continue
-        drug = RENAME_DRUG.get(c.drug_name, c.drug_name).strip().lower()
-        aliases = sorted({a.strip().lower() for a in [*c.aliases, *BRAND_ALIASES.get(drug, [])]} - {drug})
-        for part in split_text(c.text, max_chars):
-            key = (c.set_id or drug, c.section)
-            k = counter[key]
+
+        original_drug = (chunk.drug_name or "").strip().lower()
+        drug = RENAME_DRUG.get(original_drug, original_drug).strip().lower()
+
+        aliases = sorted({
+            alias.strip().lower()
+            for alias in [
+                *(chunk.aliases or []),
+                *BRAND_ALIASES.get(drug, []),
+            ]
+            if alias and alias.strip()
+        } - {drug})
+
+        if not (chunk.text or "").strip():
+            continue
+
+        parts = split_text(chunk.text, max_chars)
+
+        # Discard short fragments only if they can be merged safely.
+        if len(parts) >= 2 and len(parts[-1]) < MIN_CHARS:
+            combined = f"{parts[-2]} {parts[-1]}"
+            if len(combined) <= max_chars:
+                parts[-2] = combined
+                parts.pop()
+
+        for part in parts:
+            part = (part or "").strip()
+
+            # Never save empty chunks.
+            if not part:
+                continue
+
+            # A tiny fragment must not become a standalone chunk.
+            if len(part) < MIN_CHARS:
+                continue
+
+            key = (chunk.set_id or drug, chunk.section)
+            index = counter[key]
             counter[key] += 1
+
             out.append(
                 replace(
-                    c,
-                    chunk_id=f"{_slug(drug)}-{(c.set_id or 'noset')[:8]}-{_slug(c.section)}-{k}",
+                    chunk,
+                    chunk_id=(
+                        f"{_slug(drug)}-"
+                        f"{(chunk.set_id or 'noset')[:8]}-"
+                        f"{_slug(chunk.section)}-{index}"
+                    ),
                     drug_name=drug,
                     aliases=aliases,
                     text=part,
-                    effective_date=iso_date(c.effective_date),
+                    effective_date=iso_date(chunk.effective_date),
                 )
             )
+
     return out

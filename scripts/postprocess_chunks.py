@@ -24,6 +24,7 @@ def main() -> None:
 
     before = load_chunks(args.src)
     after = postprocess(before, args.max_chars)
+    after = [c for c in after if (c.text or "").strip()]
     save_chunks(after, args.out)
 
     e0, w0 = validate_chunks(before)
