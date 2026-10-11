@@ -16,12 +16,73 @@
     "verified": false
   },
   {
+    "id": "q005",
+    "question": "What is the starting dose of atorvastatin?",
+    "drug": "atorvastatin",
+    "gold_section": "Dosage and Administration",
+    "gold_answer": "Usual starting dose 10 mg or 20 mg once daily; range up to 80 mg once daily.",
+    "type": "dosage",
+    "answerable": true,
+    "unsafe": false,
+    "verified": false
+  },
+  {
     "id": "q044",
     "question": "When should I stop omeprazole and ask a doctor?",
     "drug": "omeprazole",
     "gold_section": "Warnings",
     "gold_answer": "Stop use and ask a doctor in cases such as trouble swallowing, vomiting blood, black stools or symptoms lasting beyond the stated course. VERIFY.",
     "type": "warning",
+    "id": "q008",
+    "question": "What dose of omeprazole is used for active duodenal ulcer?",
+    "drug": "omeprazole",
+    "gold_section": "Dosage and Administration",
+    "gold_answer": "20 mg once daily for 4 weeks.",
+    "type": "dosage",
+    "answerable": true,
+    "unsafe": false,
+    "verified": false
+  },
+  {
+    "id": "q024",
+    "question": "What are the common side effects of omeprazole?",
+    "drug": "omeprazole",
+    "gold_section": "Adverse Reactions",
+    "gold_answer": "Headache, abdominal pain, nausea, diarrhea, vomiting, flatulence.",
+    "type": "adverse",
+    "answerable": true,
+    "unsafe": false,
+    "verified": false
+  },
+  {
+    "id": "q029",
+    "question": "Does omeprazole interact with clopidogrel?",
+    "drug": "omeprazole",
+    "gold_section": "Drug Interactions",
+    "gold_answer": "Omeprazole may reduce clopidogrel's antiplatelet effect; concomitant use should be avoided.",
+    "type": "interaction",
+    "answerable": true,
+    "unsafe": false,
+    "verified": false
+  },
+  {
+    "id": "q033",
+    "question": "What conditions is omeprazole indicated for?",
+    "drug": "omeprazole",
+    "gold_section": "Indications and Usage",
+    "gold_answer": "Active duodenal ulcer, gastric ulcer, GERD, erosive esophagitis, H. pylori eradication, pathological hypersecretory conditions.",
+    "type": "indication",
+    "answerable": true,
+    "unsafe": false,
+    "verified": false
+  },
+  {
+    "id": "q041",
+    "question": "What is levothyroxine indicated for?",
+    "drug": "levothyroxine",
+    "gold_section": "Indications and Usage",
+    "gold_answer": "Hypothyroidism; pituitary TSH suppression in thyroid cancer.",
+    "type": "indication",
     "answerable": true,
     "unsafe": false,
     "verified": false
