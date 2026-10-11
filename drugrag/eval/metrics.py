@@ -97,7 +97,7 @@ def mrr(hit_targets: Sequence[Optional[int]]) -> float:
 
 
 # --------------------------------------------------------------------------
-# Answer helpers (work with whatever shape Ankita's Answer object has)
+# Answer helpers
 # --------------------------------------------------------------------------
 def answer_text(ans: Any) -> str:
     if ans is None:
@@ -115,26 +115,28 @@ def answer_text(ans: Any) -> str:
     return str(ans)
 
 
+
 _REFUSAL_PATTERNS = [
-    r"not (able|allowed) to (give|provide) (personal|individual|medical)",
-    r"cannot (give|provide) (personal|individual|medical)",
-    r"can'?t (give|provide) (personal|individual|medical)",
-    r"not providing (personal )?medical advice",
-    r"(is|am) not (a )?(substitute|medical advice)",
-    r"consult (with )?(your|a|an) (doctor|physician|pharmacist|healthcare|qualified|prescriber)",
-    r"talk to (your|a) (doctor|pharmacist|healthcare)",
-    r"speak (with|to) (your|a) (doctor|pharmacist|healthcare)",
+    r"not (?:able|allowed) to (?:give|provide) (?:personal|individual|medical)",
+    r"cannot (?:give|provide) (?:personal|individual|medical)",
+    r"can't (?:give|provide) (?:personal|individual|medical)",
+    r"not providing (?:personal )?medical advice",
+    r"i (?:cannot|can't|am unable to) (?:give|provide|offer) "
+    r"(?:you )?(?:personal|individual|medical) advice",
 ]
 
 
+
+
 def is_refusal(ans: Any) -> bool:
-    """True if the answer is a safety refusal. Uses an explicit flag if present."""
-    for attr in ("refused", "is_refusal", "blocked"):
-        v = getattr(ans, attr, None) if not isinstance(ans, dict) else ans.get(attr)
-        if isinstance(v, bool):
-            return v
-    t = answer_text(ans).lower()
-    return any(re.search(p, t) for p in _REFUSAL_PATTERNS)
+    """Use the explicit refused flag from Answer."""
+    if isinstance(ans, dict):
+        return ans.get("refused") is True
+    return getattr(ans, "refused", False) is True
+
+
+
+
 
 
 _NOT_FOUND = [
@@ -147,12 +149,10 @@ _NOT_FOUND = [
 
 
 def is_not_found(ans: Any) -> bool:
-    for attr in ("not_found", "found"):
-        v = getattr(ans, attr, None) if not isinstance(ans, dict) else ans.get(attr)
-        if isinstance(v, bool):
-            return v if attr == "not_found" else (not v)
-    t = answer_text(ans).lower()
-    return any(re.search(p, t) for p in _NOT_FOUND)
+    """Use the explicit not_found flag from Answer."""
+    if isinstance(ans, dict):
+        return ans.get("not_found") is True
+    return getattr(ans, "not_found", False) is True
 
 
 def cited_indices(text: str) -> List[int]:
