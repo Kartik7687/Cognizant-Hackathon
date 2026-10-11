@@ -1,4 +1,3 @@
-
 import re
 
 
@@ -13,8 +12,6 @@ def check_question(question):
 
     text = question.lower().strip()
 
-    # Emergency phrases must describe a real situation,
-    # not a general question about a drug.
     emergency_patterns = [
         r"\bi\s+(?:accidentally\s+)?took\s+too\s+many\b",
         r"\bi\s+took\s+too much\b",
@@ -45,7 +42,12 @@ def check_question(question):
 
 def check_advice(question):
     """
-    Detect requests for personal medical advice.
+    Flag requests for individualized medical decisions,
+    such as changing a dose or stopping a medicine.
+
+    General drug-information and interaction questions are
+    not refused just because they use 'Can I', 'Could I',
+    or 'May I'.
     """
 
     if not question or not question.strip():
@@ -55,9 +57,6 @@ def check_advice(question):
 
     advice_patterns = [
         r"\bshould i\b",
-        r"\bcan i\b",
-        r"\bcould i\b",
-        r"\bmay i\b",
         r"\bwhat dose should i\b",
         r"\bhow much should i take\b",
         r"\bwhat dosage should i\b",

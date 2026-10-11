@@ -30,3 +30,6 @@ def test_general_drug_question_is_not_advice():
 
 def test_stopping_medicine_question_is_flagged():
     assert check_advice("Can I stop sertraline suddenly?") is not None
+
+def test_drug_interaction_question_is_not_personal_advice():
+    assert check_advice("Can I take ibuprofen with warfarin?") is None
