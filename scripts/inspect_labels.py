@@ -5,10 +5,7 @@ from pathlib import Path
 RAW_DIR = Path(__file__).resolve().parents[1] / "data" / "raw"
 
 FILES = [
-    "levothyroxine.xml",
-    "lantus.xml",
-    "apixaban.xml",
-    "atorvastatin.xml",
+    "valsartan.xml",
 ]
 
 
