@@ -42,7 +42,7 @@ Individualize dosing regimen for each patient, and adjust based on INR response.
 
 ---
 
-## q004  [dosage]  verified=False
+## q004  [dosage]  verified=True
 **Q:** What is the dosage of amoxicillin for adults with ear, nose or throat infections?
 
 **Gold answer (yours):** Adult dosing per the label: 750–1750 mg per day in divided doses every 8–12 hours.
@@ -112,7 +112,7 @@ Lisinopril is contraindicated in combination with a neprilysin inhibitor (e.g., 
 
 ---
 
-## q009  [contraindication]  verified=False
+## q009  [contraindication]  verified=True
 **Q:** When is warfarin contraindicated?
 
 **Gold answer (yours):** Warfarin is contraindicated in pregnancy except in women with mechanical heart valves; hemorrhagic tendencies or blood dyscrasias; recent or planned CNS or eye surgery; major regional or lumbar block anesthesia; and malignant hypertension. Other contraindications include certain bleeding-prone conditions and procedures with potential for uncontrollable bleeding.
@@ -126,16 +126,16 @@ Warfarin sodium tablets, USP are contraindicated in: Pregnancy Warfarin sodium t
 
 ---
 
-## q010  [contraindication]  verified=False
+## q010  [contraindication]  verified=True
 **Q:** What are the contraindications of ibuprofen?
 
 **Gold answer (yours):** Known hypersensitivity to ibuprofen; history of asthma, urticaria, or allergic-type reactions after aspirin or other NSAIDs; and use in the setting of coronary artery bypass graft (CABG) surgery.
 
-**Label text for ibuprofen (9 chunk(s), showing first):**
-> section: Warnings, version 25
+**Label text for ibuprofen (1 chunk(s), showing first):**
+> section: Contraindications, version 25
 
 ```
-Cardiovascular Effects Cardiovascular Thrombotic Events Clinical trials of several COX-2 selective and nonselective NSAIDs of up to three years duration have shown an increased risk of serious cardiovascular (CV) thrombotic events, including myocardial infarction (MI) and stroke, which can be fatal. Based on available data, it is unclear that the risk for CV thrombotic events is similar for all NSAIDs. The relative increase in serious CV thrombotic events over baseline conferred by NSAID use appears to be similar in those with and without known CV disease or risk factors for CV disease. However, patients with known CV disease or risk factors had a higher absolute incidence of excess serious CV thrombotic events, due to their increased baseline rate. Some observational studies found that this increased risk of serious CV thrombotic events began as early as the first weeks of treatment. Th
+Ibuprofen tablets are contraindicated in patients with known hypersensitivity to ibuprofen. Ibuprofen tablets should not be given to patients who have experienced asthma, urticarial, or allergic-type reactions after taking aspirin or other NSAIDs. Severe, rarely fatal, anaphylactic-like reactions to NSAIDs have been reported in such patients (see WARNINGS , Anaphylactoid Reactions and PRECAUTIONS , Preexisting Asthma ). Ibuprofen tablets are contraindicated in the setting of coronary artery bypass graft (CABG) surgery (see WARNINGS ).
 ```
 
 ---
@@ -182,7 +182,7 @@ Postmarketing cases of metformin-associated lactic acidosis have resulted in dea
 
 ---
 
-## q014  [warning]  verified=False
+## q014  [warning]  verified=True
 **Q:** What is the boxed warning for lisinopril?
 
 **Gold answer (yours):** Fetal toxicity: discontinue when pregnancy is detected.
@@ -252,7 +252,7 @@ The following adverse reactions are also discussed elsewhere in the labeling: La
 
 ---
 
-## q019  [adverse]  verified=False
+## q019  [adverse]  verified=True
 **Q:** What are the common adverse reactions of lisinopril?
 
 **Gold answer (yours):** Headache, dizziness, cough, hypotension and others.
@@ -266,7 +266,7 @@ Common adverse reactions (events 2% greater than placebo) by use: Hypertension: 
 
 ---
 
-## q020  [adverse]  verified=False
+## q020  [adverse]  verified=True
 **Q:** What are the adverse reactions of amoxicillin?
 
 **Gold answer (yours):** Diarrhea, nausea, vomiting, rash, hypersensitivity reactions.
@@ -280,7 +280,7 @@ The following are discussed in more detail in other sections of the labeling: An
 
 ---
 
-## q021  [adverse]  verified=False
+## q021  [adverse]  verified=True
 **Q:** What side effects can amlodipine cause?
 
 **Gold answer (yours):** Peripheral edema, dizziness, flushing, palpitations, fatigue.
@@ -294,7 +294,7 @@ Most common adverse reaction to amlodipine is edema which occurred in a dose rel
 
 ---
 
-## q022  [adverse]  verified=False
+## q022  [adverse]  verified=True
 **Q:** What are the most common adverse reactions of atorvastatin?
 
 **Gold answer (yours):** Nasopharyngitis, arthralgia, diarrhea, pain in extremities, urinary tract infection.
@@ -308,7 +308,7 @@ The following important adverse reactions are described below and elsewhere in t
 
 ---
 
-## q023  [interaction]  verified=False
+## q023  [interaction]  verified=True
 **Q:** Can I take ibuprofen with warfarin?
 
 **Gold answer (yours):** Using ibuprofen with warfarin can increase the risk of serious gastrointestinal bleeding. Consult a doctor or pharmacist before combining them.
@@ -329,7 +329,7 @@ Tissue necrosis: Necrosis or gangrene of skin or other tissues can occur, with s
 
 ---
 
-## q024  [interaction]  verified=False
+## q024  [interaction]  verified=True
 **Q:** Does lisinopril interact with NSAIDs?
 
 **Gold answer (yours):** NSAIDs may reduce antihypertensive effect and worsen renal function.
@@ -343,7 +343,7 @@ Diuretics: Excessive drop in blood pressure (7.1) NSAIDS: Increased risk of rena
 
 ---
 
-## q025  [interaction]  verified=False
+## q025  [interaction]  verified=True
 **Q:** Which drugs raise atorvastatin levels or increase myopathy risk?
 
 **Gold answer (yours):** Strong CYP3A4 inhibitors, clarithromycin, cyclosporine, gemfibrozil, among others.
@@ -357,7 +357,7 @@ Diuretics: Excessive drop in blood pressure (7.1) NSAIDS: Increased risk of rena
 
 ---
 
-## q026  [interaction]  verified=False
+## q026  [interaction]  verified=True
 **Q:** Which drugs interact with metformin?
 
 **Gold answer (yours):** Carbonic anhydrase inhibitors, drugs affecting renal function, alcohol, certain cationic drugs.
@@ -371,7 +371,7 @@ Table 3 presents clinically significant drug interactions with metformin hydroch
 
 ---
 
-## q027  [interaction]  verified=False
+## q027  [interaction]  verified=True
 **Q:** What drugs interact with warfarin?
 
 **Gold answer (yours):** CYP2C9/3A4/1A2 inhibitors or inducers, antiplatelets, NSAIDs, other anticoagulants alter INR/bleeding risk.
@@ -385,7 +385,7 @@ Concomitant use of drugs that increase bleeding risk, antibiotics, antifungals, 
 
 ---
 
-## q028  [indication]  verified=False
+## q028  [indication]  verified=True
 **Q:** What is amlodipine used for?
 
 **Gold answer (yours):** Hypertension, coronary artery disease (chronic stable and vasospastic angina).
@@ -399,7 +399,7 @@ Amlodipine besylate tablets are a calcium channel blocker and may be used alone 
 
 ---
 
-## q029  [contraindication]  verified=False
+## q029  [contraindication]  verified=True
 **Q:** Who should not take apixaban?
 
 **Gold answer (yours):** Active pathological bleeding; severe hypersensitivity reaction to apixaban.
@@ -413,7 +413,7 @@ ELIQUIS is contraindicated in patients with the following conditions: Active pat
 
 ---
 
-## q030  [warning]  verified=False
+## q030  [warning]  verified=True
 **Q:** What happens if apixaban is stopped too early?
 
 **Gold answer (yours):** Premature discontinuation increases the risk of thrombotic events; spinal/epidural hematoma is also warned about.
@@ -427,7 +427,7 @@ ELIQUIS is contraindicated in patients with the following conditions: Active pat
 
 ---
 
-## q031  [contraindication]  verified=False
+## q031  [contraindication]  verified=True
 **Q:** What are the contraindications of clopidogrel?
 
 **Gold answer (yours):** Active pathological bleeding such as peptic ulcer or intracranial hemorrhage; hypersensitivity.
@@ -441,7 +441,7 @@ Active pathological bleeding, such as peptic ulcer or intracranial hemorrhage ( 
 
 ---
 
-## q032  [interaction]  verified=False
+## q032  [interaction]  verified=True
 **Q:** Should omeprazole be avoided with clopidogrel?
 
 **Gold answer (yours):** Avoid concomitant use with omeprazole or esomeprazole (CYP2C19 inhibition reduces clopidogrel activation).
@@ -455,7 +455,7 @@ CYP2C19 inducers: Increases levels of clopidogrel active metabolite and increase
 
 ---
 
-## q033  [adverse]  verified=False
+## q033  [adverse]  verified=True
 **Q:** What are the common side effects of sertraline?
 
 **Gold answer (yours):** Nausea, diarrhea/loose stool, dyspepsia, insomnia, somnolence, dizziness, tremor, decreased libido.
@@ -469,7 +469,7 @@ The following adverse reactions are described in more detail in other sections o
 
 ---
 
-## q034  [indication]  verified=False
+## q034  [indication]  verified=True
 **Q:** What is ondansetron used for?
 
 **Gold answer (yours):** Prevention of nausea and vomiting from chemotherapy, radiotherapy and postoperative nausea/vomiting.
@@ -497,7 +497,7 @@ The following clinically significant adverse reactions are described elsewhere i
 
 ---
 
-## q037  [warning]  verified=False
+## q037  [warning]  verified=True
 **Q:** What is the fetal risk of losartan?
 
 **Gold answer (yours):** Fetal toxicity: discontinue as soon as pregnancy is detected.
@@ -511,7 +511,7 @@ When pregnancy is detected, discontinue losartan potassium tablets as soon as po
 
 ---
 
-## q038  [contraindication]  verified=False
+## q038  [contraindication]  verified=True
 **Q:** What are the contraindications of enalapril?
 
 **Gold answer (yours):** History of angioedema with ACE inhibitors; hereditary or idiopathic angioedema; aliskiren with diabetes.
@@ -525,7 +525,7 @@ Enalapril maleate tablets are contraindicated in patients who are hypersensitive
 
 ---
 
-## q039  [contraindication]  verified=False
+## q039  [contraindication]  verified=True
 **Q:** Who should not take naproxen?
 
 **Gold answer (yours):** Known hypersensitivity; asthma, urticaria or allergic reaction after aspirin/NSAIDs; CABG perioperative pain.
@@ -539,7 +539,7 @@ Naproxen tablets are contraindicated in the following patients: • Known hypers
 
 ---
 
-## q040  [specific population]  verified=False
+## q040  [specific population]  verified=True
 **Q:** Can lisinopril be used during pregnancy?
 
 **Gold answer (yours):** No: fetal toxicity; discontinue when pregnancy is detected.
@@ -553,7 +553,7 @@ When pregnancy is detected, discontinue lisinopril as soon as possible [see Warn
 
 ---
 
-## q041  [specific population]  verified=False
+## q041  [specific population]  verified=True
 **Q:** Is ibuprofen safe during pregnancy?
 
 **Gold answer (yours):** Risk to the fetus, especially in later pregnancy; avoid unless advised by a doctor.
@@ -567,7 +567,7 @@ Cardiovascular Effects Cardiovascular Thrombotic Events Clinical trials of sever
 
 ---
 
-## q042  [specific population]  verified=False
+## q042  [specific population]  verified=True
 **Q:** Does atorvastatin need a dose change in kidney disease?
 
 **Gold answer (yours):** Renal impairment does not affect atorvastatin plasma concentrations; no dose adjustment.
@@ -581,7 +581,7 @@ Pregnancy: May cause fetal harm. (8.1). Lactation: Breastfeeding not recommended
 
 ---
 
-## q043  [dosage]  verified=False
+## q043  [dosage]  verified=True
 **Q:** How long can I take OTC omeprazole for frequent heartburn?
 
 **Gold answer (yours):** A 14-day course once daily; do not use for more than 14 days or repeat more often than every 4 months unless a doctor says so. VERIFY.
@@ -595,7 +595,7 @@ Indication Recommended Adult Dosage ZEGERID for oral suspension or ZEGERID capsu
 
 ---
 
-## q045  [warning]  verified=False
+## q045  [warning]  verified=True
 **Q:** What liver warning does acetaminophen have?
 
 **Gold answer (yours):** Severe liver damage may occur if more than the maximum daily amount is taken, with other acetaminophen-containing drugs, or with regular alcohol use. VERIFY.

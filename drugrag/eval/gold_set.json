@@ -41,7 +41,7 @@
     "type": "dosage",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q005",
@@ -96,18 +96,18 @@
     "type": "contraindication",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q010",
     "question": "What are the contraindications of ibuprofen?",
     "drug": "ibuprofen",
-    "gold_section": "Warnings and Precautions",
+    "gold_section": "Contraindications",
     "gold_answer": "Known hypersensitivity to ibuprofen; history of asthma, urticaria, or allergic-type reactions after aspirin or other NSAIDs; and use in the setting of coronary artery bypass graft (CABG) surgery.",
     "type": "contraindication",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q011",
@@ -157,7 +157,7 @@
     "type": "warning",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q015",
@@ -218,7 +218,7 @@
     "type": "adverse",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q020",
@@ -229,7 +229,7 @@
     "type": "adverse",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q021",
@@ -240,7 +240,7 @@
     "type": "adverse",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q022",
@@ -251,7 +251,7 @@
     "type": "adverse",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q023",
@@ -268,7 +268,7 @@
     "type": "interaction",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q024",
@@ -279,7 +279,7 @@
     "type": "interaction",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q025",
@@ -290,7 +290,7 @@
     "type": "interaction",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q026",
@@ -301,7 +301,7 @@
     "type": "interaction",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q027",
@@ -312,7 +312,7 @@
     "type": "interaction",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q028",
@@ -323,7 +323,7 @@
     "type": "indication",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q029",
@@ -334,7 +334,7 @@
     "type": "contraindication",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q030",
@@ -349,7 +349,7 @@
     "type": "warning",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q031",
@@ -360,7 +360,7 @@
     "type": "contraindication",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q032",
@@ -371,7 +371,7 @@
     "type": "interaction",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q033",
@@ -382,7 +382,7 @@
     "type": "adverse",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q034",
@@ -393,7 +393,7 @@
     "type": "indication",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
   "id": "q035",
@@ -422,7 +422,7 @@
     "type": "warning",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q038",
@@ -433,7 +433,7 @@
     "type": "contraindication",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q039",
@@ -444,7 +444,7 @@
     "type": "contraindication",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q040",
@@ -459,7 +459,7 @@
     "type": "specific population",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q041",
@@ -474,7 +474,7 @@
     "type": "specific population",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q042",
@@ -485,7 +485,7 @@
     "type": "specific population",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   {
     "id": "q043",
@@ -496,7 +496,7 @@
     "type": "dosage",
     "answerable": true,
     "unsafe": false,
-    "verified": false
+    "verified": true
   },
   
   {
