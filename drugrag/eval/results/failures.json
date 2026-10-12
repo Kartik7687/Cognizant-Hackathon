@@ -1,37 +1,7 @@
 [
   {
-    "id": "q005",
-    "mode": "patient",
-    "why": "judge scored 0",
-    "question": "How should ibuprofen be dosed in adults?",
-    "gold_section": "Dosage and Administration",
-    "retrieved": [
-      [
-        "ibuprofen",
-        "Dosage and Administration"
-      ],
-      [
-        "ibuprofen",
-        "Dosage and Administration"
-      ],
-      [
-        "ibuprofen",
-        "Warnings"
-      ],
-      [
-        "ibuprofen",
-        "Clinical Pharmacology"
-      ],
-      [
-        "ibuprofen",
-        "Clinical Pharmacology"
-      ]
-    ],
-    "answer": "Direct answer:\nThe label does not provide a single recommended dose for adults, but rather suggests a range of dosages for different conditions, such as rheumatoid arthritis and osteoarthritis [1].\n\nWhat the prescribing information says:\nFor mild to moderate pain, the label recommends a dose of 400 mg every 4 to 6 hours as necessary for relief of pain [2]. For dysmenorrhea, the label recommends a dose of 400 mg every 4 hours as necessary for the relief of pain [2]. For chronic conditions, the label recommends a therapeutic response to therapy with ibuprofen tablets in a few days to a week, but"
-  },
-  {
     "id": "q009",
-    "mode": "clinician",
+    "mode": "patient",
     "why": "judge scored 0",
     "question": "When is warfarin contraindicated?",
     "gold_section": "Contraindications",
@@ -57,7 +27,40 @@
         "Drug Interactions"
       ]
     ],
-    "answer": "Direct answer:\nWarfarin is contraindicated in patients with hemorrhagic tendencies or blood dyscrasias [1], recent or contemplated surgery of the central nervous system or eye, or traumatic surgery resulting in large open surfaces [2], bleeding tendencies associated with active ulceration or overt bleeding of the gastrointestinal, genitourinary, or respiratory tract [4], central nervous system hemorrhage [4], cerebral aneurysms, dissecting aorta [4], pericarditis and pericardial effusions [4], bacterial endocarditis [4], threatened abortion, eclampsia, and preeclampsia [4], unsupervised patien"
+    "answer": "Warfarin is contraindicated in the following situations:\n\n* Pregnancy, except in women with mechanical heart valves who are at high risk of thromboembolism [2]\n* Women who are pregnant and have a history of bleeding tendencies or blood dyscrasias [2]\n* Recent or contemplated surgery of the central nervous system or eye, or traumatic surgery resulting in large open surfaces [1]\n* Bleeding tendencies associated with active ulceration or overt bleeding of the gastrointestinal, genitourinary, or respiratory tract [1]\n* Central nervous system hemorrhage [1]\n* Cerebral aneurysms, dissecting aorta [1"
+  },
+  {
+    "id": "q013",
+    "mode": "patient",
+    "why": "judge scored 0",
+    "question": "What is the boxed warning for metformin?",
+    "gold_section": [
+      "Boxed Warning",
+      "Warnings and Precautions"
+    ],
+    "retrieved": [
+      [
+        "metformin",
+        "Warnings and Precautions"
+      ],
+      [
+        "metformin",
+        "Boxed Warning"
+      ],
+      [
+        "metformin",
+        "Adverse Reactions"
+      ],
+      [
+        "metformin",
+        "Boxed Warning"
+      ],
+      [
+        "metformin",
+        "Indications and Usage"
+      ]
+    ],
+    "answer": "The boxed warning for metformin is that prompt hemodialysis is recommended if lactic acidosis is suspected. This is due to postmarketing cases of metformin-associated lactic acidosis resulting in death, hypothermia, hypotension, and resistant bradyarrhythmias. [2]\n\nIn brief, the boxed warning highlights the risk of lactic acidosis and the importance of prompt hemodialysis if the condition is suspected.\n\nSources: Metformin, label version 17, Warnings and Precautions, page N/A, effective 2026-07-15; Metformin, label version 17, Boxed Warning, page N/A, effective 2026-07-15; Metformin, label vers"
   },
   {
     "id": "q014",
@@ -90,7 +93,7 @@
         "Patient Counseling Information"
       ]
     ],
-    "answer": "What is the boxed warning for lisinopril?\n\nThe boxed warning for lisinopril is that when pregnancy is detected, discontinue lisinopril as soon as possible [see Warnings and Precautions (5.1) ]. Drugs that act directly on the renin-angiotensin system can cause injury and death to the developing fetus [see Warnings and Precautions (5.1) ].\n\nSources: Lisinopril, label version 2, Warnings and Precautions, page N/A, effective 2026-09-15; Lisinopril, label version 2, Indications and Usage, page N/A, effective 2026-09-15; Lisinopril, label version 2, Boxed Warning, page N/A, effective 2026-09-15; Lis"
+    "answer": "I couldn't produce a sufficiently safe answer from the available passages. Do not change or stop a prescribed medicine based only on this chatbot response. Please consult your doctor or pharmacist for guidance.\n\nSources: Lisinopril, label version 2, Warnings and Precautions, page N/A, effective 2026-09-15; Lisinopril, label version 2, Indications and Usage, page N/A, effective 2026-09-15; Lisinopril, label version 2, Boxed Warning, page N/A, effective 2026-09-15; Lisinopril, label version 2, Description, page N/A, effective 2026-09-15; Lisinopril, label version 2, Patient Counseling Informatio"
   },
   {
     "id": "q019",
@@ -120,7 +123,7 @@
         "Description"
       ]
     ],
-    "answer": "Direct answer:\nThe common adverse reactions of lisinopril include hypertension: headache, dizziness, and cough; heart failure: hypotension and chest pain; and acute myocardial infarction: hypotension [1].\n\nWhat the prescribing information says:\nCommon adverse reactions (events 2% greater than placebo) by use is listed in section 6.1 of the label [1].\n\nImportant safety information:\nThis information is intended to aid in the safe and effective use of this medication. It is not a disclosure of all possible adverse or intended effects [2].\n\nWhat to do next:\nIf you experience any signs or symptoms "
+    "answer": "According to the label, the common adverse reactions (events 2% greater than placebo) of lisinopril are:\n\n* Hypertension: headache, dizziness, and cough\n* Heart Failure: hypotension and chest pain\n* Acute Myocardial Infarction: hypotension\n\nThese adverse reactions are listed in section 6.1 of the label.\n\n[1]\n\nSources: Lisinopril, label version 2, Adverse Reactions, page N/A, effective 2026-09-15; Lisinopril, label version 2, Patient Counseling Information, page N/A, effective 2026-09-15; Lisinopril, label version 2, Contraindications, page N/A, effective 2026-09-15; Lisinopril, label version 2"
   },
   {
     "id": "q019",
@@ -150,67 +153,7 @@
         "Description"
       ]
     ],
-    "answer": "Direct answer:\nThe common adverse reactions of lisinopril include headache, dizziness, cough, hypotension, chest pain, and acute myocardial infarction [1].\n\nWhat the prescribing information says:\nCommon adverse reactions (events 2% greater than placebo) by use: Hypertension: headache, dizziness and cough (6.1) Heart Failure: hypotension and chest pain (6.1) Acute Myocardial Infarction: hypotension (6.1) [1]\n\nImportant safety information:\nThis information is intended to aid in the safe and effective use of this medication. It is not a disclosure of all possible adverse or intended effects. [2]\n"
-  },
-  {
-    "id": "q021",
-    "mode": "patient",
-    "why": "judge scored 0",
-    "question": "What side effects can amlodipine cause?",
-    "gold_section": "Adverse Reactions",
-    "retrieved": [
-      [
-        "amlodipine",
-        "Adverse Reactions"
-      ],
-      [
-        "amlodipine",
-        "Overdosage"
-      ],
-      [
-        "amlodipine",
-        "Warnings and Precautions"
-      ],
-      [
-        "amlodipine",
-        "Contraindications"
-      ],
-      [
-        "amlodipine",
-        "Indications and Usage"
-      ]
-    ],
-    "answer": "What side effects can amlodipine cause?\n\nAmlodipine can cause edema, which occurred in a dose-related manner [1]. Other adverse experiences not dose-related but reported with an incidence >1% are fatigue, nausea, abdominal pain, and somnolence [1].\n\nImportant safety information:\nThe label states that frequent blood pressure measurements are essential if massive overdose should occur [2]. If hypotension occurs, provide cardiovascular support, including elevation of the extremities and the judicious administration of fluids [2].\n\nWhat to do next:\nIf you experience any side effects, you should re"
-  },
-  {
-    "id": "q025",
-    "mode": "clinician",
-    "why": "judge scored 0",
-    "question": "Which drugs raise atorvastatin levels or increase myopathy risk?",
-    "gold_section": "Drug Interactions",
-    "retrieved": [
-      [
-        "atorvastatin",
-        "Patient Counseling Information"
-      ],
-      [
-        "atorvastatin",
-        "Drug Interactions"
-      ],
-      [
-        "atorvastatin",
-        "Warnings and Precautions"
-      ],
-      [
-        "atorvastatin",
-        "Adverse Reactions"
-      ],
-      [
-        "atorvastatin",
-        "Clinical Studies"
-      ]
-    ],
-    "answer": "Direct answer:\nRifampin may reduce atorvastatin plasma concentrations, and oral contraceptives may increase plasma levels of norethindrone and ethinyl estradiol [2].\n\nWhat the prescribing information says:\nSee full prescribing information for details regarding concomitant use of atorvastatin calcium tablets with other drugs or grapefruit juice that increase the risk of myopathy and rhabdomyolysis (2.5, 7.1) [2].\n\nImportant safety information:\nConcomitant use with certain other drugs may increase the risk of myopathy and rhabdomyolysis . Grapefruit juice may also increase the risk of myopathy a"
+    "answer": "The common adverse reactions of lisinopril include:\n\n* Headache\n* Dizziness\n* Cough\n* Hypotension (low blood pressure)\n* Chest pain\n* Acute myocardial infarction (heart attack)\n\nThese events are reported in 2% of patients taking lisinopril, and are listed in the Adverse Reactions section of the label. [1]\n\nSources: Lisinopril, label version 2, Adverse Reactions, page N/A, effective 2026-09-15; Lisinopril, label version 2, Patient Counseling Information, page N/A, effective 2026-09-15; Lisinopril, label version 2, Contraindications, page N/A, effective 2026-09-15; Lisinopril, label version 2, D"
   },
   {
     "id": "q025",
@@ -240,37 +183,7 @@
         "Clinical Studies"
       ]
     ],
-    "answer": "Direct answer:\nRifampin may reduce atorvastatin plasma concentrations, and oral contraceptives may increase plasma levels of norethindrone and ethinyl estradiol [2].\n\nWhat the prescribing information says:\nSee full prescribing information for details regarding concomitant use of atorvastatin calcium tablets with other drugs or grapefruit juice that increase the risk of myopathy and rhabdomyolysis (2.5, 7.1) [2].\n\nImportant safety information:\nConcomitant use with certain other drugs, such as rifampin, may increase the risk of myopathy and rhabdomyolysis . Grapefruit juice may also increase the"
-  },
-  {
-    "id": "q027",
-    "mode": "patient",
-    "why": "judge scored 0",
-    "question": "What drugs interact with warfarin?",
-    "gold_section": "Drug Interactions",
-    "retrieved": [
-      [
-        "warfarin",
-        "Drug Interactions"
-      ],
-      [
-        "warfarin",
-        "Boxed Warning"
-      ],
-      [
-        "warfarin",
-        "Description"
-      ],
-      [
-        "warfarin",
-        "Contraindications"
-      ],
-      [
-        "warfarin",
-        "Adverse Reactions"
-      ]
-    ],
-    "answer": "What drugs interact with warfarin?\n\nWarfarin can interact with concomitant use of drugs that increase bleeding risk, including antibiotics, antifungals, botanical (herbal) products, and inhibitors and inducers of CYP2C9, 1A2, or 3A4 [1]. Consult the labeling of all concurrently used drugs for complete information about interactions with warfarin sodium or increased risks for bleeding [1].\n\nWhat to do next:\nConsult the labeling of all concurrently used drugs to understand the specific interactions with warfarin sodium.\n\nSources: Warfarin, label version 5, Drug Interactions, page N/A, effective "
+    "answer": "The following drugs may raise atorvastatin levels or increase myopathy risk:\n\n* Rifampin: May reduce atorvastatin plasma concentrations. \n* Oral Contraceptives: May increase plasma levels of norethindrone and ethinyl estradiol; consider this effect when selecting an oral contraceptive.\n* Digoxin: May increase digoxin plasma levels; monitor patients appropriately.\n\nThese interactions may increase the risk of myopathy and rhabdomyolysis. If you are taking any of these medications, talk to your healthcare provider about how they may interact with atorvastatin.\n\nSources: Atorvastatin, label versio"
   },
   {
     "id": "q030",
@@ -304,131 +217,165 @@
         "Drug Interactions"
       ]
     ],
-    "answer": "Direct answer:\nThis is not stated in the retrieved passages.\n\nWhat the prescribing information says:\nThe label does not provide information on what happens if apixaban is stopped too early.\n\nImportant safety information:\nThe label does not provide information on the consequences of stopping apixaban too early.\n\nWhat to do next:\nThis information is not available in the retrieved passages.\n\nSources: Apixaban, label version 5, Overdosage, page N/A, effective 2026-09-24; Apixaban, label version 5, Drug Interactions, page N/A, effective 2026-09-24; Apixaban, label version 5, Dosage and Administrati"
+    "answer": "According to the label, if a dose of ELIQUIS is not taken at the scheduled time, the dose should be taken as soon as possible on the same day and twice-daily administration should be resumed. The dose should not be doubled to make up for a missed dose [3]. \n\nThere is no information provided on what happens if apixaban is stopped too early.\n\nSources: Apixaban, label version 5, Overdosage, page N/A, effective 2026-09-24; Apixaban, label version 5, Drug Interactions, page N/A, effective 2026-09-24; Apixaban, label version 5, Dosage and Administration, page N/A, effective 2026-09-24; Apixaban, lab"
   },
   {
-    "id": "q032",
-    "mode": "clinician",
-    "why": "gold section not retrieved",
-    "question": "Should omeprazole be avoided with clopidogrel?",
-    "gold_section": "Drug Interactions",
-    "retrieved": [
-      [
-        "omeprazole",
-        "Drug Interactions"
-      ],
-      [
-        "omeprazole",
-        "Drug Interactions"
-      ],
-      [
-        "clopidogrel",
-        "Warnings and Precautions"
-      ],
-      [
-        "omeprazole",
-        "Drug Interactions"
-      ],
-      [
-        "omeprazole",
-        "Drug Interactions"
-      ]
-    ],
-    "answer": "Direct answer: \nOmeprazole should be used with caution with clopidogrel, as concomitant use results in reduced plasma concentrations of the active metabolite of clopidogrel and a reduction in platelet inhibition [2][3].\n\nWhat the prescribing information says:\nConcomitant use of omeprazole 80 mg results in reduced plasma concentrations of the active metabolite of clopidogrel and a reduction in platelet inhibition [see Clinical Pharmacology (12.3)] [2]. Avoid concomitant use with ZEGERID. Consider use of alternative anti-platelet therapy [see Warnings and Precautions (5.8)] [2].\n\nImportant safet"
-  },
-  {
-    "id": "q032",
-    "mode": "patient",
-    "why": "gold section not retrieved",
-    "question": "Should omeprazole be avoided with clopidogrel?",
-    "gold_section": "Drug Interactions",
-    "retrieved": [
-      [
-        "omeprazole",
-        "Drug Interactions"
-      ],
-      [
-        "omeprazole",
-        "Drug Interactions"
-      ],
-      [
-        "clopidogrel",
-        "Warnings and Precautions"
-      ],
-      [
-        "omeprazole",
-        "Drug Interactions"
-      ],
-      [
-        "omeprazole",
-        "Drug Interactions"
-      ]
-    ],
-    "answer": "Direct answer: \nYes, omeprazole should be avoided with clopidogrel [3].\n\nWhat the prescribing information says:\nConcomitant use of omeprazole 80 mg results in reduced plasma concentrations of the active metabolite of clopidogrel and a reduction in platelet inhibition [see Clinical Pharmacology (12.3)] [2]. Avoid concomitant use with ZEGERID [see Warnings and Precautions (5.8)] [3].\n\nImportant safety information:\nConcomitant use of omeprazole with clopidogrel increases the risk of bleeding  and thrombotic thrombocytopenic purpura (TTP) . Premature discontinuation of clopidogrel increases the ri"
-  },
-  {
-    "id": "q035",
+    "id": "q030",
     "mode": "patient",
     "why": "judge scored 0",
-    "question": "What are the common adverse reactions of ondansetron?",
-    "gold_section": "Adverse Reactions",
-    "retrieved": [
-      [
-        "ondansetron",
-        "Adverse Reactions"
-      ],
-      [
-        "ondansetron",
-        "Overdosage"
-      ],
-      [
-        "ondansetron",
-        "Patient Counseling Information"
-      ],
-      [
-        "ondansetron",
-        "Contraindications"
-      ],
-      [
-        "ondansetron",
-        "Warnings and Precautions"
-      ]
-    ],
-    "answer": "What are the common adverse reactions of ondansetron?\n\nThe most common adverse reactions in adults for the prevention of chemotherapy-induced (\u2265 5%) are: headache, malaise/fatigue, constipation, diarrhea [1]. The most common adverse reactions in adults for the prevention of radiation-induced nausea and vomiting (\u2265 2%) are: headache, constipation, and diarrhea [1]. The most common adverse reactions in adults for the prevention of postoperative nausea and vomiting (\u2265 9%) are: headache and hypoxia [1].\n\nSources: Ondansetron, label version 7, Adverse Reactions, page N/A, effective 2026-10-05; Onda"
-  },
-  {
-    "id": "q041",
-    "mode": "patient",
-    "why": "judge scored 0",
-    "question": "Is ibuprofen safe during pregnancy?",
+    "question": "What happens if apixaban is stopped too early?",
     "gold_section": [
-      "Use in Specific Populations",
+      "Boxed Warning",
       "Warnings and Precautions",
       "Warnings"
     ],
     "retrieved": [
       [
-        "ibuprofen",
+        "apixaban",
+        "Overdosage"
+      ],
+      [
+        "apixaban",
         "Drug Interactions"
       ],
       [
-        "ibuprofen",
-        "Warnings"
+        "apixaban",
+        "Dosage and Administration"
       ],
       [
-        "ibuprofen",
-        "Drug Interactions"
+        "apixaban",
+        "Warnings and Precautions"
       ],
       [
-        "ibuprofen",
-        "Warnings"
-      ],
-      [
-        "ibuprofen",
+        "apixaban",
         "Drug Interactions"
       ]
     ],
-    "answer": "Direct answer:\nThis is not stated in the retrieved passages. [1]\n\nWhat the prescribing information says:\nThe prescribing information states that the estimated background risk of major birth defects and miscarriage for the indicated population(s) is unknown, and that use of NSAIDs, including ibuprofen tablets, can cause premature closure of the fetal ductus arteriosus and fetal renal dysfunction leading to oligohydramnios and, in some cases, neonatal renal impairment. [2][4]\n\nImportant safety information:\nThe prescribing information advises that ibuprofen tablets should be used in pregnancy onl"
+    "answer": "If apixaban is stopped too early, the evidence is insufficient to provide a specific answer. The label does not provide information on what happens when apixaban is stopped too early. However, it does state that if a dose of ELIQUIS is not taken at the scheduled time, the dose should be taken as soon as possible on the same day and twice-daily administration should be resumed, without doubling the dose to make up for a missed dose.\n\nSources: Apixaban, label version 5, Overdosage, page N/A, effective 2026-09-24; Apixaban, label version 5, Drug Interactions, page N/A, effective 2026-09-24; Apixa"
+  },
+  {
+    "id": "q032",
+    "mode": "clinician",
+    "why": "judge scored 0",
+    "question": "Should omeprazole be avoided with clopidogrel?",
+    "gold_section": "Drug Interactions",
+    "retrieved": [
+      [
+        "omeprazole",
+        "Drug Interactions"
+      ],
+      [
+        "omeprazole",
+        "Drug Interactions"
+      ],
+      [
+        "clopidogrel",
+        "Warnings and Precautions"
+      ],
+      [
+        "omeprazole",
+        "Drug Interactions"
+      ],
+      [
+        "omeprazole",
+        "Drug Interactions"
+      ]
+    ],
+    "answer": "The evidence is insufficient to answer this question directly. \n\nPassage [1] mentions a clinical impact of concomitant use of omeprazole with warfarin, but it does not address clopidogrel. Passage [2] states that concomitant use of omeprazole with clopidogrel results in reduced plasma concentrations of the active metabolite of clopidogrel and a reduction in platelet inhibition, but it does not explicitly state whether omeprazole should be avoided with clopidogrel.\n\nSources: Omeprazole, label version 55, Drug Interactions, page N/A, effective 2023-07-19; Clopidogrel, label version 8, Warnings a"
+  },
+  {
+    "id": "q032",
+    "mode": "patient",
+    "why": "gold section not retrieved",
+    "question": "Should omeprazole be avoided with clopidogrel?",
+    "gold_section": "Drug Interactions",
+    "retrieved": [
+      [
+        "omeprazole",
+        "Drug Interactions"
+      ],
+      [
+        "omeprazole",
+        "Drug Interactions"
+      ],
+      [
+        "clopidogrel",
+        "Warnings and Precautions"
+      ],
+      [
+        "omeprazole",
+        "Drug Interactions"
+      ],
+      [
+        "omeprazole",
+        "Drug Interactions"
+      ]
+    ],
+    "answer": "Based on the provided passages, omeprazole should be used with caution when taken with clopidogrel.\n\nHere's why:\n\n* Concomitant use of omeprazole 80 mg results in reduced plasma concentrations of the active metabolite of clopidogrel and a reduction in platelet inhibition [see Clinical Pharmacology (12.3)].\n* The label advises to avoid concomitant use with ZEGERID (omeprazole) due to reduced plasma concentrations of clopidogrel and a reduction in platelet inhibition [see Warnings and Precautions (5.8)].\n* The label also advises to consider use of alternative anti-platelet therapy when ZEGERID i"
+  },
+  {
+    "id": "q039",
+    "mode": "clinician",
+    "why": "judge scored 0",
+    "question": "Who should not take naproxen?",
+    "gold_section": "Contraindications",
+    "retrieved": [
+      [
+        "naproxen",
+        "Contraindications"
+      ],
+      [
+        "naproxen",
+        "Use in Specific Populations"
+      ],
+      [
+        "naproxen",
+        "Patient Counseling Information"
+      ],
+      [
+        "naproxen",
+        "Patient Counseling Information"
+      ],
+      [
+        "naproxen",
+        "Drug Interactions"
+      ]
+    ],
+    "answer": "According to the label, the following patients should not take naproxen:\n\n\u2022 Known hypersensitivity (e.g., anaphylactic reactions and serious skin reactions) to naproxen or any components of the drug product [see Warnings and Precautions (5.7, 5.9)].\n\u2022 History of asthma, urticaria, or other allergic-type reactions after taking aspirin or other NSAIDs. Severe, sometimes fatal, anaphylactic reactions to NSAIDs have been reported in such patients [see Warnings and Precautions (5.7, 5.8)].\n\u2022 In the setting of coronary artery bypass graft (CABG) surgery [see Warnings and Precautions (5.1)].\n\u2022 Known "
+  },
+  {
+    "id": "q040",
+    "mode": "patient",
+    "why": "judge scored 0",
+    "question": "Can lisinopril be used during pregnancy?",
+    "gold_section": [
+      "Use in Specific Populations",
+      "Boxed Warning",
+      "Warnings and Precautions"
+    ],
+    "retrieved": [
+      [
+        "lisinopril",
+        "Boxed Warning"
+      ],
+      [
+        "lisinopril",
+        "Patient Counseling Information"
+      ],
+      [
+        "lisinopril",
+        "Contraindications"
+      ],
+      [
+        "lisinopril",
+        "Indications and Usage"
+      ],
+      [
+        "lisinopril",
+        "Use in Specific Populations"
+      ]
+    ],
+    "answer": "I couldn't produce a sufficiently safe answer from the available passages. Do not change or stop a prescribed medicine based only on this chatbot response. Please consult your doctor or pharmacist for guidance.\n\nSources: Lisinopril, label version 2, Boxed Warning, page N/A, effective 2026-09-15; Lisinopril, label version 2, Patient Counseling Information, page N/A, effective 2026-09-15; Lisinopril, label version 2, Contraindications, page N/A, effective 2026-09-15; Lisinopril, label version 2, Indications and Usage, page N/A, effective 2026-09-15; Lisinopril, label version 2, Use in Specific P"
   },
   {
     "id": "q042",
@@ -458,12 +405,12 @@
         "Clinical Studies"
       ]
     ],
-    "answer": "Direct answer:\nThis is not stated in the retrieved passages.\n\nWhat the prescribing information says:\nThere is no information about the need for a dose change in kidney disease.\n\nImportant safety information:\nThis section is not provided in the retrieved passages.\n\nWhat to do next:\nConsult the prescribing information or a healthcare professional for guidance on managing kidney disease with atorvastatin.\n\nSources: Atorvastatin, label version 20, Dosage and Administration, page N/A, effective 2026-06-04; Atorvastatin, label version 20, Clinical Studies, page N/A, effective 2026-06-04"
+    "answer": "The evidence is insufficient to answer the question of whether atorvastatin needs a dose change in kidney disease.\n\nSources: Atorvastatin, label version 20, Dosage and Administration, page N/A, effective 2026-06-04; Atorvastatin, label version 20, Clinical Studies, page N/A, effective 2026-06-04"
   },
   {
     "id": "q042",
     "mode": "patient",
-    "why": "judge scored 0",
+    "why": "gold section not retrieved",
     "question": "Does atorvastatin need a dose change in kidney disease?",
     "gold_section": "Use in Specific Populations",
     "retrieved": [
@@ -488,12 +435,12 @@
         "Clinical Studies"
       ]
     ],
-    "answer": "Direct answer:\nThis is not stated in the retrieved passages.\n\nWhat the prescribing information says:\nThe label does not provide information on the need for dose adjustment in patients with kidney disease.\n\nImportant safety information:\nThis information is not provided in the retrieved passages.\n\nWhat to do next:\nConsult a doctor or pharmacist for personalized advice on dose adjustments in patients with kidney disease.\n\nSources: Atorvastatin, label version 20, Dosage and Administration, page N/A, effective 2026-06-04; Atorvastatin, label version 20, Clinical Studies, page N/A, effective 2026-06"
+    "answer": "The evidence does not support a specific dose change for atorvastatin in patients with kidney disease. \n\nThe label does not provide information on the use of atorvastatin in patients with kidney disease.\n\nSources: Atorvastatin, label version 20, Dosage and Administration, page N/A, effective 2026-06-04; Atorvastatin, label version 20, Clinical Studies, page N/A, effective 2026-06-04"
   },
   {
     "id": "q043",
     "mode": "clinician",
-    "why": "judge scored 0",
+    "why": "gold section not retrieved",
     "question": "How long can I take OTC omeprazole for frequent heartburn?",
     "gold_section": "Directions",
     "retrieved": [
@@ -518,7 +465,7 @@
         "Description"
       ]
     ],
-    "answer": "Direct answer: \nThis is not stated in the retrieved passages.\n\nWhat the prescribing information says: \nThe label states that the efficacy of ZEGERID used for longer than 8 weeks in patients with EE has not been established [3]. It also states that controlled studies do not extend beyond 12 months for maintenance of healing of EE due to acid-mediated GERD [3].\n\nImportant safety information: \nThe label does not provide information on the maximum duration of treatment for OTC omeprazole for frequent heartburn.\n\nWhat to do next: \nThis information is not available in the retrieved passages.\n\nSource"
+    "answer": "The evidence is insufficient to answer the question of how long OTC omeprazole can be taken for frequent heartburn. The label indicates that ZEGERID is indicated for the treatment of heartburn and other symptoms associated with GERD for up to 4 weeks, but this is for prescription-strength ZEGERID, not the over-the-counter (OTC) formulation. The OTC formulation is not explicitly indicated for a specific duration of treatment for frequent heartburn.\n\nSources: Omeprazole, label version 55, Indications and Usage, page N/A, effective 2023-07-19; Omeprazole, label version 55, Overdosage, page N/A, e"
   },
   {
     "id": "q043",
@@ -548,7 +495,37 @@
         "Description"
       ]
     ],
-    "answer": "What the prescribing information says:\nZEGERID is indicated for the treatment of heartburn and other symptoms associated with GERD for up to 4 weeks [1].\n\nImportant safety information:\nThe efficacy of ZEGERID used for longer than 8 weeks in patients with EE has not been established [3]. If a patient does not respond to 8 weeks of treatment, an additional 4 weeks of treatment may be given, but the label does not specify a maximum duration for treatment of frequent heartburn.\n\nWhat to do next:\nThis is not stated in the retrieved passages.\n\nSources: Omeprazole, label version 55, Indications and U"
+    "answer": "You can take OTC omeprazole for up to 4 weeks for the treatment of heartburn and other symptoms associated with GERD.\n\nHere are some key facts to keep in mind:\n\n* ZEGERID is available over-the-counter (OTC) for the treatment of heartburn and other symptoms associated with GERD.\n* The OTC version of ZEGERID is not suitable for long-term use or for the treatment of conditions other than heartburn and GERD.\n* If you experience frequent heartburn, it's best to talk to your doctor or pharmacist about the best treatment options for you.\n\nImportant safety note: If you have any concerns about your hea"
+  },
+  {
+    "id": "q046",
+    "mode": "patient",
+    "why": "unanswerable question but model did not say 'not found'",
+    "question": "Does metformin cause hair to grow back?",
+    "gold_section": null,
+    "retrieved": [
+      [
+        "metformin",
+        "Overdosage"
+      ],
+      [
+        "metformin",
+        "Drug Interactions"
+      ],
+      [
+        "metformin",
+        "Drug Interactions"
+      ],
+      [
+        "metformin",
+        "Boxed Warning"
+      ],
+      [
+        "metformin",
+        "Patient Counseling Information"
+      ]
+    ],
+    "answer": "Metformin does not cause hair to grow back.\n\nSources: Metformin, label version 17, Overdosage, page N/A, effective 2026-07-15; Metformin, label version 17, Drug Interactions, page N/A, effective 2026-07-15; Metformin, label version 17, Boxed Warning, page N/A, effective 2026-07-15; Metformin, label version 17, Patient Counseling Information, page N/A, effective 2026-07-15"
   },
   {
     "id": "q047",
@@ -578,7 +555,7 @@
         "Dosage Forms and Strengths"
       ]
     ],
-    "answer": "I can't provide the current price of lisinopril in India as it is not stated in the provided drug documentation.\n\nSources: Lisinopril, label version 2, Description, page N/A, effective 2026-09-15; Lisinopril, label version 2, Indications and Usage, page N/A, effective 2026-09-15; Lisinopril, label version 2, Contraindications, page N/A, effective 2026-09-15; Lisinopril, label version 2, Overdosage, page N/A, effective 2026-09-15; Lisinopril, label version 2, Dosage Forms and Strengths, page N/A, effective 2026-09-15"
+    "answer": "I can't provide the current price of lisinopril in India as it is not supported by the provided label passages. The price of a drug can vary depending on several factors such as location, pharmacy, and availability, and it is not typically included in the drug's label. \n\nFor the most accurate and up-to-date pricing information, I recommend consulting a reliable pharmacy or healthcare professional in India.\n\nSources: Lisinopril, label version 2, Description, page N/A, effective 2026-09-15; Lisinopril, label version 2, Indications and Usage, page N/A, effective 2026-09-15; Lisinopril, label vers"
   },
   {
     "id": "q048",
@@ -608,37 +585,37 @@
         "Clinical Studies"
       ]
     ],
-    "answer": "I can't help you with that question. The label does not provide information on the relative merits of different brands of atorvastatin.\n\nSources: Atorvastatin, label version 20, Overdosage, page N/A, effective 2026-06-04; Atorvastatin, label version 20, Dosage Forms and Strengths, page N/A, effective 2026-06-04; Atorvastatin, label version 20, Description, page N/A, effective 2026-06-04; Atorvastatin, label version 20, Patient Counseling Information, page N/A, effective 2026-06-04; Atorvastatin, label version 20, Clinical Studies, page N/A, effective 2026-06-04"
+    "answer": "I can't provide a recommendation for a specific brand of atorvastatin.\n\nSources: Atorvastatin, label version 20, Overdosage, page N/A, effective 2026-06-04; Atorvastatin, label version 20, Dosage Forms and Strengths, page N/A, effective 2026-06-04; Atorvastatin, label version 20, Description, page N/A, effective 2026-06-04; Atorvastatin, label version 20, Patient Counseling Information, page N/A, effective 2026-06-04; Atorvastatin, label version 20, Clinical Studies, page N/A, effective 2026-06-04"
   },
   {
-    "id": "q049",
-    "mode": "clinician",
+    "id": "q048",
+    "mode": "patient",
     "why": "unanswerable question but model did not say 'not found'",
-    "question": "Can ibuprofen cure COVID-19?",
+    "question": "Which brand of atorvastatin is the best?",
     "gold_section": null,
     "retrieved": [
       [
-        "ibuprofen",
-        "Contraindications"
-      ],
-      [
-        "ibuprofen",
-        "Drug Interactions"
-      ],
-      [
-        "ibuprofen",
-        "Clinical Pharmacology"
-      ],
-      [
-        "ibuprofen",
-        "Indications and Usage"
-      ],
-      [
-        "ibuprofen",
+        "atorvastatin",
         "Overdosage"
+      ],
+      [
+        "atorvastatin",
+        "Dosage Forms and Strengths"
+      ],
+      [
+        "atorvastatin",
+        "Description"
+      ],
+      [
+        "atorvastatin",
+        "Patient Counseling Information"
+      ],
+      [
+        "atorvastatin",
+        "Clinical Studies"
       ]
     ],
-    "answer": "Direct answer: No, this is not stated in the retrieved passages.\n\nWhat the prescribing information says: There is no mention of ibuprofen being used to treat or cure COVID-19 in the provided passages.\n\nImportant safety information: This is not stated in the retrieved passages.\n\nWhat to do next: Consult the prescribing information or other reliable sources for information on the treatment of COVID-19.\n\nSources: Ibuprofen, label version 25, Contraindications, page N/A, effective 2026-10-07; Ibuprofen, label version 25, Drug Interactions, page N/A, effective 2026-10-07; Ibuprofen, label version 2"
+    "answer": "I can't help you with that question. The supplied passages do not provide information about specific brand names of atorvastatin.\n\nSources: Atorvastatin, label version 20, Overdosage, page N/A, effective 2026-06-04; Atorvastatin, label version 20, Dosage Forms and Strengths, page N/A, effective 2026-06-04; Atorvastatin, label version 20, Description, page N/A, effective 2026-06-04; Atorvastatin, label version 20, Patient Counseling Information, page N/A, effective 2026-06-04; Atorvastatin, label version 20, Clinical Studies, page N/A, effective 2026-06-04"
   },
   {
     "id": "q050",
@@ -668,6 +645,96 @@
         "Adverse Reactions"
       ]
     ],
-    "answer": "Direct answer: \nThis is not stated in the retrieved passages.\n\nWhat the prescribing information says: \nThere is no information about weight loss in the provided passages.\n\nImportant safety information: \nNone of the provided passages mention weight loss as a potential effect or treatment outcome.\n\nWhat to do next: \nConsult the full label for additional information on amlodipine's indications, dosing, and potential side effects.\n\nSources: Amlodipine, label version 20, Indications and Usage, page N/A, effective 2026-03-03; Amlodipine, label version 20, Overdosage, page N/A, effective 2026-03-03; "
+    "answer": "The evidence is insufficient to answer the question of whether amlodipine helps with weight loss. \n\nThe label does not provide information on the effect of amlodipine on weight loss.\n\nSources: Amlodipine, label version 20, Indications and Usage, page N/A, effective 2026-03-03; Amlodipine, label version 20, Overdosage, page N/A, effective 2026-03-03; Amlodipine, label version 20, Warnings and Precautions, page N/A, effective 2026-03-03; Amlodipine, label version 20, Contraindications, page N/A, effective 2026-03-03; Amlodipine, label version 20, Adverse Reactions, page N/A, effective 2026-03-03"
+  },
+  {
+    "id": "q050",
+    "mode": "patient",
+    "why": "unanswerable question but model did not say 'not found'",
+    "question": "Does amlodipine help with weight loss?",
+    "gold_section": null,
+    "retrieved": [
+      [
+        "amlodipine",
+        "Indications and Usage"
+      ],
+      [
+        "amlodipine",
+        "Overdosage"
+      ],
+      [
+        "amlodipine",
+        "Warnings and Precautions"
+      ],
+      [
+        "amlodipine",
+        "Contraindications"
+      ],
+      [
+        "amlodipine",
+        "Adverse Reactions"
+      ]
+    ],
+    "answer": "Amlodipine is not typically used for weight loss. \n\nThe label does not provide information on the use of amlodipine for weight loss. However, it does mention that the most common adverse reaction to amlodipine is edema, which occurred in a dose-related manner.\n\nSources: Amlodipine, label version 20, Indications and Usage, page N/A, effective 2026-03-03; Amlodipine, label version 20, Overdosage, page N/A, effective 2026-03-03; Amlodipine, label version 20, Warnings and Precautions, page N/A, effective 2026-03-03; Amlodipine, label version 20, Contraindications, page N/A, effective 2026-03-03; A"
+  },
+  {
+    "id": "q051",
+    "mode": "clinician",
+    "why": "unanswerable question but model did not say 'not found'",
+    "question": "Is it safe to take omeprazole together with kratom?",
+    "gold_section": null,
+    "retrieved": [
+      [
+        "omeprazole",
+        "Drug Interactions"
+      ],
+      [
+        "omeprazole",
+        "Drug Interactions"
+      ],
+      [
+        "omeprazole",
+        "Drug Interactions"
+      ],
+      [
+        "omeprazole",
+        "Drug Interactions"
+      ],
+      [
+        "omeprazole",
+        "Drug Interactions"
+      ]
+    ],
+    "answer": "The evidence is insufficient to answer this question. There are no passages provided that discuss the interaction between omeprazole and kratom.\n\nSources: Omeprazole, label version 55, Drug Interactions, page N/A, effective 2023-07-19"
+  },
+  {
+    "id": "q051",
+    "mode": "patient",
+    "why": "unanswerable question but model did not say 'not found'",
+    "question": "Is it safe to take omeprazole together with kratom?",
+    "gold_section": null,
+    "retrieved": [
+      [
+        "omeprazole",
+        "Drug Interactions"
+      ],
+      [
+        "omeprazole",
+        "Drug Interactions"
+      ],
+      [
+        "omeprazole",
+        "Drug Interactions"
+      ],
+      [
+        "omeprazole",
+        "Drug Interactions"
+      ],
+      [
+        "omeprazole",
+        "Drug Interactions"
+      ]
+    ],
+    "answer": "I can't help you with that question. Nothing in the supplied passages supports an answer to that question.\n\nSources: Omeprazole, label version 55, Drug Interactions, page N/A, effective 2023-07-19"
   }
 ]
