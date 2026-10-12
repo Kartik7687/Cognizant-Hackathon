@@ -150,6 +150,13 @@ def render_sources(hits, answer: str):
 
 
 
+def show_safety_banner(text: str) -> None:
+    if (text or "").lstrip().startswith("URGENT"):
+        st.error("Possible emergency: contact emergency services (India: 112).")
+    else:
+        st.info("Safety response: personal medical decisions need a healthcare professional.")
+
+
 # --------------------------------------------------------------------------
 # Sidebar
 # --------------------------------------------------------------------------
@@ -160,9 +167,9 @@ with st.sidebar:
     st.divider()
     st.subheader("Retrieval settings")
     index_dir = st.text_input("Index folder", "index/bge-small")
-    reranker = st.text_input("Reranker (blank = none)", "bge-reranker-base")
-    retr_mode = st.selectbox("Retrieval mode", ["hybrid_rerank", "hybrid", "dense", "bm25"])
-    top_k = st.slider("Top-k passages", 2, 8, 5)
+    reranker = st.text_input("Reranker (blank = none; adds ~5 s per question, no accuracy gain in our eval)", "")
+    retr_mode = st.selectbox("Retrieval mode", ["hybrid", "dense", "bm25", "hybrid_rerank"])
+    top_k = st.slider("Top-k passages", 2, 8, 3)
     st.divider()
     st.caption("Answers come only from official DailyMed drug labels. "
                "This tool does not give personal medical advice.")
@@ -203,7 +210,7 @@ for m in st.session_state.messages:
         st.markdown(m["content"])
         if m["role"] == "assistant":
             if m.get("refused"):
-                st.info("Safety response: personal medical decisions need a healthcare professional.")
+                show_safety_banner(m["content"])
             render_sources(m.get("hits", []), m["content"])
 
 query = st.chat_input("Ask about indications, dosage, contraindications, side effects, interactions...") or clicked
@@ -254,7 +261,7 @@ if query:
 
             refused = is_refusal(result) if not isinstance(result, str) or gen_ok else False
             if refused:
-                st.info("Safety response: personal medical decisions need a healthcare professional.")
+                show_safety_banner(full)
             render_sources(hits, full)
             st.session_state.messages.append(
                 {"role": "assistant", "content": full, "hits": hits, "refused": refused})

@@ -292,7 +292,7 @@ def main() -> None:
     ap.add_argument("--no-rerank", action="store_true", help="skip hybrid_rerank mode")
     ap.add_argument("--top-k", type=int, default=5)
     ap.add_argument("--generate", action="store_true", help="also run generation + guardrail eval")
-    ap.add_argument("--gen-retrieval-mode", default="hybrid_rerank")
+    ap.add_argument("--gen-retrieval-mode", default="hybrid")
     ap.add_argument("--gen-modes", default="clinician,patient")
     ap.add_argument("--judge-model", default=None, help="Ollama model for LLM-as-judge")
     ap.add_argument("--limit", type=int, default=None, help="only first N gold questions for generation")

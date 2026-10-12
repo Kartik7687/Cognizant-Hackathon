@@ -51,7 +51,7 @@ ollama pull llama3.1:8b      # only needed for the LLM-as-judge eval
 
 ## Run
 
-1. Validate the data and build the index (first run downloads the bge models from Hugging Face):
+1. Validate the data and build the index (the first run downloads the bge models from Hugging Face, so it needs internet):
 ```powershell
 python scripts\validate_chunks.py data\chunks_clean.jsonl
 python scripts\build_index.py --chunks data\chunks_clean.jsonl --out index\bge-small --embedder bge-small
@@ -60,7 +60,7 @@ python scripts\build_index.py --chunks data\chunks_clean.jsonl --out index\bge-s
 ```powershell
 streamlit run app\app.py
 ```
-In the sidebar keep index folder `index/bge-small`, reranker `bge-reranker-base`, mode `hybrid_rerank`.
+In the sidebar keep index folder `index/bge-small`, retrieval mode `hybrid` and the reranker box empty (the cross-encoder reranker is available but gave no accuracy gain in our evaluation and adds about 5 s per question).
 
 3. Quick retrieval check without the UI:
 ```powershell
@@ -71,6 +71,8 @@ python scripts\demo_retrieve.py "What are the contraindications of ibuprofen?" -
 
 ```powershell
 python -m drugrag.eval.eval --index index\bge-small --reranker bge-reranker-base --generate --judge-model llama3.1:8b
+# quick smoke test (about 3 min, does not touch committed results):
+python -m drugrag.eval.eval --index index\bge-small --no-rerank --generate --gen-modes patient --limit 15 --out scratch_results
 ```
 Writes retrieval ablation (dense, bm25, hybrid, hybrid_rerank), generation, citation accuracy and
 guardrail results to `drugrag/eval/results/`.
@@ -80,7 +82,7 @@ guardrail results to `drugrag/eval/results/`.
 ```powershell
 python -m pytest -q
 ```
-Tests run offline with the `hash` embedder and mock data.
+Tests run offline with the `hash` embedder, mock data and a fake Ollama (53 tests).
 
 ## Data
 
@@ -92,6 +94,13 @@ effective date, LOINC code and source URL. Schema: `docs/chunk_schema.md`.
 The assistant answers only from retrieved label text and is not medical advice. Emergencies get an urgent
 message; personal-advice questions (dose changes, stopping a drug) get a template that gives label
 information and directs the user to a doctor or pharmacist.
+
+## Documentation
+
+- `docs/REPORT.md`: technical report (design, results, limitations)
+- `docs/chunk_schema.md`: chunk schema and metadata
+- `DEMO_SCRIPT.md`: rehearsed demo queries
+- `tools/`: one-off data inspection helpers used while building the pipeline
 
 ## Team
 

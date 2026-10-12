@@ -8,3 +8,5 @@ data/raw/
 data/chunks.jsonl
 *.npy
 .env
+scratch_results/
+*.zip

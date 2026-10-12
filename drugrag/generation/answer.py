@@ -1,7 +1,6 @@
 from dataclasses import dataclass, field
 import re
 
-import ollama
 
 from ..schema import format_citation
 from ..retrieval.retrieve import format_context
@@ -26,6 +25,35 @@ NOT_FOUND_PATTERNS = [
     r"could not find",
     r"couldn'?t find",
 ]
+
+
+def clean_citations(text, n_sources):
+    """Keep only valid [1]..[n] citations; drop label section numbers like [2.1] or [17]."""
+    def fix(m):
+        keep = []
+        for tok in re.findall(r"\d+(?:\.\d+)?", m.group(1)):
+            if "." not in tok and 1 <= int(tok) <= n_sources and int(tok) not in keep:
+                keep.append(int(tok))
+        return "".join(f"[{k}]" for k in keep)
+
+    return re.sub(r"\[(\d+(?:\.\d+)?(?:\s*,\s*\d+(?:\.\d+)?)*)\]", fix, text)
+
+
+def question_names_a_drug(query, hits):
+    """True if the question mentions (or closely misspells) a drug/brand of the retrieved chunks.
+
+    When no drug is detected the retriever searches every label and returns unrelated
+    passages, which must not be sent to the LLM (e.g. a question about a drug we do not have).
+    """
+    import difflib
+
+    names = set()
+    for hit in hits:
+        c = hit.chunk
+        for n in [c.drug_name, *(c.aliases or [])]:
+            names.update(w for w in re.findall(r"[a-z0-9]+", (n or "").lower()) if len(w) > 3)
+    words = [w for w in re.findall(r"[a-z0-9]+", (query or "").lower()) if len(w) > 3]
+    return any(difflib.get_close_matches(w, names, n=1, cutoff=0.8) for w in words)
 
 
 def detect_not_found(text: str) -> bool:
@@ -125,6 +153,19 @@ def answer(query, hits, mode="patient") -> Answer:
             not_found=True,
         )
 
+    if not question_names_a_drug(query, hits):
+        text = (
+            "Direct answer: I could not identify a drug from the labels I have "
+            "available in your question, so I cannot answer it reliably. "
+            "This does not mean the drug has no prescribing information.\n\n"
+            "What to do next: Name one of the drugs covered by this assistant "
+            "(for example metformin, ibuprofen, warfarin or atorvastatin), or consult "
+            "a doctor or pharmacist.\n\n"
+            "Sources: No relevant label passages found"
+        )
+        return Answer(query=query, mode=mode, text=text, sources=[],
+                      refused=False, not_found=True)
+
     context = format_context(hits)
 
     prompt = get_prompt(
@@ -132,6 +173,8 @@ def answer(query, hits, mode="patient") -> Answer:
         context=context,
         question=query,
     )
+
+    import ollama  # imported here so tests run without Ollama installed
 
     response = ollama.chat(
         model="llama3.2",
@@ -168,6 +211,7 @@ def answer(query, hits, mode="patient") -> Answer:
 
     generated_text = response["message"]["content"]
     generated_text = check_answer(generated_text)
+    generated_text = clean_citations(generated_text, len(hits))
 
     # The evaluator reads this Boolean flag before checking answer text.
     not_found = detect_not_found(generated_text)

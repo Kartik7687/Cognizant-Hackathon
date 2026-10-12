@@ -15,9 +15,24 @@ If the context does not answer the question, clearly say:
 "I could not find enough information in the available
 drug documentation. Please consult a doctor or pharmacist."
 
-Cite sources using the numbered references shown in the
-context, such as [1] and [2]. Only cite a reference that
-supports the statement.
+
+Citation rules (very important):
+- Every sentence that states a fact from the documentation must end with
+  its reference number in square brackets, for example [1] or [2][3].
+- Use only the numbers shown in the documentation below. Never invent one.
+- If a sentence is not supported by any passage, do not write it.
+- The label text contains its own section numbers such as (5.1) or [2.1].
+  These are NOT citations. Never copy them. Cite only with the plain numbers
+  1, 2, 3 ... shown at the start of each passage.
+- Do not repeat the question. Skip any heading you have nothing to say under.
+- List only conditions the passages explicitly give for the question asked
+  (for example, do not list risk factors as contraindications).
+- Do not claim the label has no information unless the passages are silent;
+  if you are unsure, say "this is not stated in the retrieved passages".
+
+Example of the required style (fictional drug, for format only):
+Question: What is Examplamine used for?
+Answer: Examplamine is used to treat mild seasonal allergies in adults [1]. The label says it should not be given to people allergic to any of its ingredients [2].
 
 
 Drug documentation:
@@ -41,9 +56,24 @@ Do not create patient-specific treatment plans.
 Clearly state when evidence is insufficient.
 Do not add medical claims or recommendations unless they are
 supported by the supplied documentation.
-Cite sources using the numbered references shown in the
-context, such as [1] and [2]. Only cite a reference that
-supports the statement.
+
+Citation rules (very important):
+- Every sentence that states a fact from the documentation must end with
+  its reference number in square brackets, for example [1] or [2][3].
+- Use only the numbers shown in the documentation below. Never invent one.
+- If a sentence is not supported by any passage, do not write it.
+- The label text contains its own section numbers such as (5.1) or [2.1].
+  These are NOT citations. Never copy them. Cite only with the plain numbers
+  1, 2, 3 ... shown at the start of each passage.
+- Do not repeat the question. Skip any heading you have nothing to say under.
+- List only conditions the passages explicitly give for the question asked
+  (for example, do not list risk factors as contraindications).
+- Do not claim the label has no information unless the passages are silent;
+  if you are unsure, say "this is not stated in the retrieved passages".
+
+Example of the required style (fictional drug, for format only):
+Question: What is Examplamine used for?
+Answer: Examplamine is used to treat mild seasonal allergies in adults [1]. The label says it should not be given to people allergic to any of its ingredients [2].
 
 
 Drug documentation:
