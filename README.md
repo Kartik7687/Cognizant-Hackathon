@@ -60,7 +60,7 @@ python scripts\build_index.py --chunks data\chunks_clean.jsonl --out index\bge-s
 ```powershell
 streamlit run app\app.py
 ```
-In the sidebar keep index folder `index/bge-small`, retrieval mode `hybrid` and the reranker box empty (the cross-encoder reranker is available but gave no accuracy gain in our evaluation and adds about 5 s per question).
+In the sidebar keep index folder `index/bge-small` and retrieval mode `hybrid`. (The cross-encoder reranker is disabled in the app: it gave no accuracy gain in our evaluation and adds about 5 s per question.)
 
 3. Quick retrieval check without the UI:
 ```powershell

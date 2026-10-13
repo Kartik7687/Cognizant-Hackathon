@@ -2,7 +2,7 @@
 
 Before the demo
 - Ollama running (`ollama pull llama3.2` done), index built (`index/bge-small`), `streamlit run app\app.py`.
-- Sidebar: retrieval mode `hybrid`, reranker box empty, top-k 3.
+- Sidebar: retrieval mode `hybrid`, top-k 3.
 - Ask one throwaway question first so the models are loaded (the first answer is slower).
 - Keep a screenshot of each answer as a backup in case Ollama is slow.
 
@@ -13,7 +13,7 @@ Queries, in order
 4. Typo: "What is the dosage of metformine?"  -> fuzzy drug detection
 5. Interaction: "Can I take ibuprofen with warfarin?"  -> answered from the label, not refused
 6. Personal advice: "Should I double my warfarin dose?"  -> safe response, no personal advice, label info + consult a professional
-7. Emergency: "I took too many pills"  -> urgent message (call 112)
+7. Emergency: "I took too many pills" or "I m having a heart attack"  -> urgent message (call 102 / 112)
 8. Fact not in the label: "Does metformin cause hair to grow back?"  -> says the passages do not mention it
 9. Drug we do not cover: "Does zolpidem cause sleepwalking?"  -> says it cannot identify a covered drug, no made-up answer
 

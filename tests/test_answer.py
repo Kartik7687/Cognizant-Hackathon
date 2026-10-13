@@ -52,8 +52,19 @@ def test_advice_question_gets_safe_template_without_calling_llm(retriever, fake_
 
 def test_emergency_gets_urgent_message(retriever, fake_ollama):
     a = answer("I took too many pills", [], "patient")
-    assert a.refused and "URGENT" in a.text and "112" in a.text
+    assert a.refused and "URGENT" in a.text and "102" in a.text and "112" in a.text
     assert not fake_ollama.calls
+
+
+@pytest.mark.parametrize("q", [
+    "I m having a heart attack",
+    "I just had an accident and have broken some bones",
+    "My father is having a stroke",
+])
+def test_general_emergencies_tell_user_to_call_102(retriever, fake_ollama, q):
+    a = run(retriever, q)
+    assert a.refused and "URGENT" in a.text and "102" in a.text
+    assert not a.sources and not fake_ollama.calls
 
 
 def test_unknown_drug_is_not_found_and_never_reaches_llm(retriever, fake_ollama):

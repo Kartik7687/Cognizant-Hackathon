@@ -31,9 +31,10 @@ EXAMPLES = [
 
 
 @st.cache_resource(show_spinner="Loading index and models...")
-def load_retriever(index_dir: str, reranker: str):
+def load_retriever(index_dir: str):
     from drugrag.retrieval import Retriever
-    return Retriever.from_dir(index_dir, reranker=reranker or None)
+    # The cross-encoder reranker is disabled (no accuracy gain, ~5 s slower per question).
+    return Retriever.from_dir(index_dir, reranker=None)
 
 
 def get_answer_fn():
@@ -239,8 +240,8 @@ def render_sources(hits, answer: str):
 def show_safety_banner(text: str) -> None:
     if (text or "").lstrip().startswith("URGENT"):
         st.error(
-            "Possible emergency: contact emergency services "
-            "(India: 112)."
+            "Possible emergency: call 102 (ambulance) now, "
+            "or 112 (national emergency number)."
         )
     else:
         st.info(
@@ -268,14 +269,9 @@ with st.sidebar:
 
     index_dir = st.text_input("Index folder", "index/bge-small")
 
-    reranker = st.text_input(
-        "Reranker (blank = none; adds ~5 s per question)",
-        "",
-    )
-
     retr_mode = st.selectbox(
         "Retrieval mode",
-        ["hybrid", "dense", "bm25", "hybrid_rerank"],
+        ["hybrid", "dense", "bm25"],
     )
 
     top_k = st.slider("Top-k passages", 2, 8, 3)
@@ -295,7 +291,7 @@ with st.sidebar:
 
 
 try:
-    retriever = load_retriever(index_dir, reranker)
+    retriever = load_retriever(index_dir)
     retriever_ok = True
 except Exception as e:
     retriever, retriever_ok = None, False
